@@ -9,14 +9,16 @@ public class Shoot : MonoBehaviour
 	public Timer shootTimer;
 	public GameObject muzzleFlashPrefab;
 
+    private Animation animation;
+
 	private void Start()
 	{
-		
+        this.animation = new Animation(animator, "Shoot");
 	}
 	
 	public void Initilize()
 	{
-		if (shootTimer.HasEnded())
+		if (animator.AnimationHasEnded(animation))
 		{
 			shootTimer.Initilize();
 			animator.Play("Shoot");

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraFollow : MonoBehaviour, IOffset
+public class CameraFollow : MonoBehaviour
 {
 	public Vector3 offset;
 	

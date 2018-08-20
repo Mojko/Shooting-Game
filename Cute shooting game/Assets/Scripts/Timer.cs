@@ -4,6 +4,7 @@ using System.Threading;
 using NUnit.Framework.Internal.Execution;
 using UnityEngine;
 using System.Threading;
+using System;
 
 public class Timer : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class Timer : MonoBehaviour
         }
     }
 
+    public float GetOriginalTime()
+    {
+        return originalTime;
+    }
+
     private void Update()
     {
         if (this.time > 0 && this.originalTime > 0)
@@ -30,7 +36,7 @@ public class Timer : MonoBehaviour
             switch (this.tickType)
             {
                 case TimerTickType.Seconds:
-                    this.time -= 1 / 60f;
+                    this.time -= 1 * Time.deltaTime;
                     break;
             }
         }
