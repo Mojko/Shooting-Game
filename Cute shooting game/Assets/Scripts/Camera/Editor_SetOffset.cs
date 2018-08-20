@@ -3,15 +3,15 @@ using System.Collections;
 using UnityEditor;
 
 [CustomEditor(typeof(CameraFollow))]
-public class Editor_SetCameraOffset : Editor 
+public class Editor_SetOffset : Editor
 {
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
-        CameraFollow camera = (CameraFollow) target;
+        CameraFollow offset = (CameraFollow) target;
         if (GUILayout.Button("Set Offset"))
         {
-           camera.SetOffset(camera.transform.position);
+           offset.SetOffset();
         }
     }
 }

@@ -6,31 +6,69 @@ public class PlayerInput : MonoBehaviour
 {
 	
 	public Movement movement;
-	public ShootComponent shootComponent;
-	public AnimatorController animatorController;
+	public EquipGun gunEquipper;
+	public AnimatorController animator;
 	
 	private void FixedUpdate ()
+	{
+		this.MoveInput();
+	}
+
+	private void Update()
+	{
+		this.ShootInput();
+	}
+
+	private void MoveInput()
 	{
 		float xAxis = Input.GetAxis("Horizontal");
 		float zAxis = Input.GetAxis("Vertical");
 
 		movement.Move(xAxis, zAxis);
-
-		float xAxisRaw = Input.GetAxisRaw("Horizontal");
-		float zAxisRaw = Input.GetAxisRaw("Vertical");
 		
-		movement.Rotate(xAxisRaw, zAxisRaw);
-
 		if (Input.GetKey(KeyCode.Space) && movement.IsGrounded)
 		{
 			movement.Jump();
 		}
+	}
 
-		if (Input.GetKeyDown(KeyCode.LeftControl))
+	private void ShootInput()
+	{
+		if (Input.GetMouseButton(0))
 		{
-			Debug.Log("Testing");
-			shootComponent.Shoot();
-			animatorController.StartAim();
+			gunEquipper.gun.Shoot();
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//this.lookAtMouse.enabled = true;
+/*
+if (this.animatorController.animator.GetBool(AnimatorValues.AimTrigger))
+{
+	this.lookAtMouse.enabled = true;
+}
+else
+{
+	this.lookAtMouse.enabled = false;
+	this.movement.Rotate(xAxisRaw, zAxisRaw);
+}
+*/

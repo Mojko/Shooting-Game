@@ -47,14 +47,19 @@ public class Movement : MonoBehaviour
 		this.rigidBody.velocity += new Vector3(0, jumpSpeed, 0);
 	}
 	
-	public void Rotate(float xTowards, float zTowards)
+	public void Rotate(Vector3 towards)
 	{
-		Vector3 movement = new Vector3(xTowards, 0, zTowards);
+		Vector3 movement = new Vector3(towards.x, 0, towards.z);
 		
 		if (movement != Vector3.zero)
 		{
 			this.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.2f);
 		}
+	}
+
+	public void Rotate(float xAxis, float zAxis)
+	{
+		this.Rotate(new Vector3(xAxis, 0, zAxis));
 	}
 	
 	public static void FollowObject(GameObject me, GameObject target, Vector3 offset)

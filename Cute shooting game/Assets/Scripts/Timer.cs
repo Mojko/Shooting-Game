@@ -5,35 +5,122 @@ using NUnit.Framework.Internal.Execution;
 using UnityEngine;
 using System.Threading;
 
-public class Timer
+public class Timer : MonoBehaviour
 {
-    /*private float time;
-    private TimeType timeType;
+    public float time;
+    public TimerTickType tickType;
+    private float originalTime;
     
-    public Timer(float time, TimeType timeType)
+    public void Initilize()
     {
-        this.time = time;
-        this.timeType = timeType;
-        ThreadPool.QueueUserWorkItem(Update, this);
+        if (this.time > 0)
+        {
+            this.originalTime = this.time; 
+        }
+        else
+        {
+            this.time = this.originalTime;
+        }
     }
 
-    private void Update(object o)
+    private void Update()
     {
-        Timer @this = (Timer) o;
-        while (@this.time > 0)
+        if (this.time > 0 && this.originalTime > 0)
         {
-            switch(@this.timeType)
+            switch (this.tickType)
             {
-                case TimeType.Seconds:
-                    TimeHelper.TickSeconds(@this.time);
+                case TimerTickType.Seconds:
+                    this.time -= 1 / 60f;
                     break;
-            }  
+            }
         }
-    }*/
+    }
+
+    public bool HasEnded()
+    {
+        return this.time <= 0 || this.originalTime <= 0;
+    }
 }
+
+public enum TimerTickType
+{
+    Seconds
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //private int time;
     
-    
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 /*
 private int time;
@@ -69,3 +156,28 @@ private void Update(object state)
     }
 }
 */
+
+
+/*private float time;
+private TimeType timeType;
+
+public Timer(float time, TimeType timeType)
+{
+    this.time = time;
+    this.timeType = timeType;
+    ThreadPool.QueueUserWorkItem(Update, this);
+}
+
+private void Update(object o)
+{
+    Timer @this = (Timer) o;
+    while (@this.time > 0)
+    {
+        switch(@this.timeType)
+        {
+            case TimeType.Seconds:
+                TimeHelper.TickSeconds(@this.time);
+                break;
+        }  
+    }
+}*/

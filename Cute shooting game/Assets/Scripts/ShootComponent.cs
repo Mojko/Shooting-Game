@@ -8,13 +8,27 @@ public class ShootComponent : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform[] spawnPositions;
     public AnimatorController animatorController;
+    public ShootAnimation shootAnimation;
+    public float shootTimer;
+    private float originalShootTimer;
     
     public float animationLifeTimeInSeconds;
     private float originalTime;
+
+    private void Start()
+    {
+        this.originalShootTimer = shootTimer;
+        this.originalTime = this.animationLifeTimeInSeconds;
+    }
     
     private void Update()
     {
-        if (this.animationLifeTimeInSeconds > 0)
+        if (this.shootTimer > 0)
+        {
+            shootTimer -= 1/60f;
+        }
+        
+        /*if (this.animationLifeTimeInSeconds > 0)
         {
             this.animationLifeTimeInSeconds -= 1/60f;
 
@@ -22,17 +36,24 @@ public class ShootComponent : MonoBehaviour
             {
                 this.animatorController.StopAim();
             }   
-        }
+        }*/
     }
     
     public void Shoot()
     {
-        foreach (Transform transform in this.spawnPositions)
+        if (this.shootTimer <= 0)
         {
-            GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, Quaternion.identity); 
-            bulletInstance.GetComponent<Bullet>().CreateBullet(this.transform.forward);   
-        }
+            foreach (Transform transform in this.spawnPositions)
+            {
+                GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, Quaternion.identity); 
+                //bulletInstance.GetComponent<Bullet>().CreateBullet(this.transform.forward);   
+            }
+        
+            this.shootAnimation.Shoot();
 
-        this.animationLifeTimeInSeconds = 1;
+            this.animatorController.StartAim();
+            this.animationLifeTimeInSeconds = this.originalTime;
+            this.shootTimer = this.originalShootTimer;
+        }
     }
 }

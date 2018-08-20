@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\elev\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Cute shooting game.-2100053023.00" t="ExcludeRecursive" />
-    <e p="C:\Users\elev\Documents\Cute shooting game" t="IncludeRecursive">
+    <e p="C:\Users\Jesper\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Cute shooting game.-276229682.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Jesper\Documents\Cute shooting game" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
-      <e p="Assets\Bullet.cs" t="Include" />
+      <e p="Assets\MuzzleFlash.cs" t="Include" />
       <e p="Assets\Scripts" t="Include">
         <e p="AnimatorController.cs" t="Include" />
+        <e p="Bullet.cs" t="Include" />
         <e p="Camera" t="Include">
           <e p="CameraFollow.cs" t="Include" />
-          <e p="Editor_SetCameraOffset.cs" t="Include" />
+          <e p="Editor_SetOffset.cs" t="Include" />
         </e>
+        <e p="EquipGun.cs" t="Include" />
+        <e p="IOffset.cs" t="Include" />
         <e p="KillOverTime.cs" t="Include" />
+        <e p="LookAtMouse.cs" t="Include" />
         <e p="Movement.cs" t="Include" />
         <e p="PlayerInput.cs" t="Include" />
+        <e p="ScriptableObjects" t="Include">
+          <e p="Gun.cs" t="Include" />
+        </e>
+        <e p="Shoot.cs" t="Include" />
+        <e p="ShootAnimation.cs" t="Include" />
         <e p="ShootComponent.cs" t="Include" />
         <e p="TimeHelper.cs" t="Include" />
         <e p="Timer.cs" t="Include" />

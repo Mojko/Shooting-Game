@@ -33,4 +33,11 @@ public static class AnimatorValues
 {
 	public const string SpeedMultiplier = "speed";
 	public const string AimTrigger = "Aim";
+	public const string Shoot = "Shoot";
+}
+
+public enum AnimatorTypes
+{
+	Bool,
+	Float
 }
