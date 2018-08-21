@@ -3,39 +3,39 @@ using System.Collections;
 
 public class Shoot : MonoBehaviour
 {
-	public GameObject bulletPrefab;
-	public Animator animator;
-	public Transform[] spawnPositions;
-	public Timer shootTimer;
-	public GameObject muzzleFlashPrefab;
+    public GameObject bulletPrefab;
+    public Animator animator;
+    public Transform[] spawnPositions;
+    public Timer shootTimer;
+    public GameObject muzzleFlashPrefab;
 
     private Animation animation;
 
-	private void Start()
-	{
+    private void Start()
+    {
         this.animation = new Animation(animator, "Shoot");
-	}
-	
-	public void Initilize()
-	{
-		if (animator.AnimationHasEnded(animation))
-		{
-			shootTimer.Initilize();
-			animator.Play("Shoot");
-			this.muzzleFlashPrefab.GetComponent<MuzzleFlash>().Activate();
-			
-			for (int i = 0; i < spawnPositions.Length; i++)
-			{
-				GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+    }
 
-				int value = ((i & 1) == 1) ? -1 : 1;
+    public void Initilize()
+    {
+        if (animator.AnimationHasEnded(animation))
+        {
+            shootTimer.Initilize();
+            animator.Play("Shoot");
+            this.muzzleFlashPrefab.GetComponent<MuzzleFlash>().Activate();
+			
+            for (int i = 0; i < spawnPositions.Length; i++)
+            {
+                GameObject bulletInstance = Instantiate(bulletPrefab, spawnPositions[i].position, Quaternion.identity);
+
+                //int value = ((i & 1) == 1) ? -1 : 1;
 				
-				Vector3 direction = this.transform.root.forward - this.transform.root.right/(24 * value);
+                //Vector3 direction = this.transform.root.forward - this.transform.root.right / (24 * value);
 				
-				bulletInstance.GetComponent<Bullet>().CreateBullet(direction);
-			}
-		}
-	}
+                bulletInstance.GetComponent<Bullet>().CreateBullet(Vector3.zero);
+            }
+        }
+    }
 }
 
 /*
@@ -50,7 +50,7 @@ public class Shoot : MonoBehaviour
 
 
 
-//        
+//
 //			this.shootAnimation.Shoot();
 //
 //			this.animatorController.StartAim();

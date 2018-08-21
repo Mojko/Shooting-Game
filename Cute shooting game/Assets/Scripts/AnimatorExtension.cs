@@ -6,12 +6,12 @@ public static class AnimatorExtension
 {
     public static bool IsPlaying(this Animator @this, Animation animation)
     {
-       return @this.GetCurrentAnimatorStateInfo(0).IsName(animation.GetName());
+        return @this.GetCurrentAnimatorStateInfo(0).IsName(animation.GetName());
     }
 
     public static bool AnimationHasEnded(this Animator @this, Animation animation)
     {
-        return (@this.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.1f && @this.IsPlaying(animation)) || !@this.IsPlaying(animation);
+        return (@this.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.0f && @this.IsPlaying(animation)) || !@this.IsPlaying(animation);
     }
 }
 
