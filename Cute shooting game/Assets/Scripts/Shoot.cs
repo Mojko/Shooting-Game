@@ -10,10 +10,12 @@ public class Shoot : MonoBehaviour
     public GameObject muzzleFlashPrefab;
 
     private Animation animation;
+    private GameObject entity;
 
     private void Start()
     {
         this.animation = new Animation(animator, "Shoot");
+        this.entity = this.transform.root.gameObject;
     }
 
     public void Initilize()
@@ -28,11 +30,7 @@ public class Shoot : MonoBehaviour
             {
                 GameObject bulletInstance = Instantiate(bulletPrefab, spawnPositions[i].position, Quaternion.identity);
 
-                //int value = ((i & 1) == 1) ? -1 : 1;
-				
-                //Vector3 direction = this.transform.root.forward - this.transform.root.right / (24 * value);
-				
-                bulletInstance.GetComponent<Bullet>().CreateBullet(Vector3.zero);
+                bulletInstance.GetComponent<Bullet>().CreateBullet(this.entity.transform, 0);
             }
         }
     }
