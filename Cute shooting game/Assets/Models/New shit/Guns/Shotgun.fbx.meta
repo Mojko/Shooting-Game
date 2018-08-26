@@ -13,6 +13,15 @@ ModelImporter:
     100010: Cylinder.000
     100012: Cylinder.001
     100014: //RootNode
+    100016: node_id10
+    100018: node_id18
+    100020: node_id19
+    100022: node_id4
+    100024: node_id5
+    100026: node_id6
+    100028: node_id7
+    100030: node_id8
+    100032: node_id9
     400000: Barrels
     400002: Cube
     400004: Cube.001
@@ -21,6 +30,15 @@ ModelImporter:
     400010: Cylinder.000
     400012: Cylinder.001
     400014: //RootNode
+    400016: node_id10
+    400018: node_id18
+    400020: node_id19
+    400022: node_id4
+    400024: node_id5
+    400026: node_id6
+    400028: node_id7
+    400030: node_id8
+    400032: node_id9
     2300000: Barrels
     2300002: Cube
     2300004: Cube.001
@@ -28,6 +46,13 @@ ModelImporter:
     2300008: Cube.004
     2300010: Cylinder.000
     2300012: Cylinder.001
+    2300014: node_id10
+    2300016: node_id4
+    2300018: node_id5
+    2300020: node_id6
+    2300022: node_id7
+    2300024: node_id8
+    2300026: node_id9
     3300000: Barrels
     3300002: Cube
     3300004: Cube.001
@@ -35,6 +60,13 @@ ModelImporter:
     3300008: Cube.004
     3300010: Cylinder.000
     3300012: Cylinder.001
+    3300014: node_id10
+    3300016: node_id4
+    3300018: node_id5
+    3300020: node_id6
+    3300022: node_id7
+    3300024: node_id8
+    3300026: node_id9
     4300000: Cube.004
     4300002: Barrels
     4300004: Cube.002
@@ -42,6 +74,13 @@ ModelImporter:
     4300008: Cube.001
     4300010: Cylinder.001
     4300012: Cube
+    4300014: node_id4
+    4300016: node_id5
+    4300018: node_id6
+    4300020: node_id7
+    4300022: node_id8
+    4300024: node_id9
+    4300026: node_id10
   materials:
     importMaterials: 1
     materialName: 0

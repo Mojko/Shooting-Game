@@ -5,6 +5,12 @@ using UnityEngine;
 public class KillOverTime : MonoBehaviour
 {
     public float time;
+    private float originalTime;
+
+    private void Start()
+    {
+        this.originalTime = this.time;
+    }
 
     private void Update()
     {
@@ -13,5 +19,10 @@ public class KillOverTime : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    public float GetOriginalTime()
+    {
+        return this.originalTime;//new TimeHelper(this.originalTime, TimeType.Seconds);
     }
 }

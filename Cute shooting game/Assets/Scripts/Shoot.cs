@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Shoot : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    /* public GameObject bulletPrefab;
     public Animator animator;
     public Transform[] spawnPositions;
     public Timer shootTimer;
@@ -33,7 +33,7 @@ public class Shoot : MonoBehaviour
                 bulletInstance.GetComponent<Bullet>().CreateBullet(this.entity.transform, 0);
             }
         }
-    }
+    }*/
 }
 
 /*

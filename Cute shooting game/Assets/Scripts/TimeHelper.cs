@@ -3,10 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeHelper 
+public class TimeHelper
 {
-    public static float TickSeconds()
+    private float time;
+    private TimeType type;
+
+    public TimeHelper(float time, TimeType type)
     {
-        return 1 / 60;
+        this.type = type;
     }
+
+    public float ToMilliseconds()
+    {
+        switch (this.type)
+        {
+            case TimeType.Seconds:
+                return this.time * 1000;
+        }
+
+        return -1;
+    }
+}
+
+
+public enum TimeType
+{
+    Seconds
 }

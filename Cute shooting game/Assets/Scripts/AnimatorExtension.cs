@@ -4,6 +4,11 @@ using UnityEngine;
 
 public static class AnimatorExtension
 {
+    public static void Play(this Animator @this, Animation animation)
+    {
+        @this.Play(animation.GetName());
+    }
+
     public static bool IsPlaying(this Animator @this, Animation animation)
     {
         return @this.GetCurrentAnimatorStateInfo(0).IsName(animation.GetName());
@@ -15,24 +20,29 @@ public static class AnimatorExtension
     }
 }
 
+[System.Serializable]
 public class Animation
 {
-    private string name;
-    private AnimatorStateInfo stateInfo;
+    public Animator animator;
+    public AnimationClip animationClip;
 
-    public Animation(Animator animator, string name)
+    public void Play()
     {
-        this.name = name;
-        this.stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        animator.Play(this);
+    }
+
+    public bool HasEnded()
+    {
+        return animator.AnimationHasEnded(this);
     }
 
     public string GetName()
     {
-        return this.name;
+        return this.animationClip.name;
     }
 
     public AnimatorStateInfo GetStateInfo()
     {
-        return this.stateInfo;
+        return this.animator.GetCurrentAnimatorStateInfo(0);
     }
 }

@@ -5,17 +5,57 @@ using System.Collections;
 public class Gun : ScriptableObject
 {
     public GameObject prefab;
-    private Shoot sceneObject;
+    public GameObject bulletPrefab;
+    public GameObject muzzleFlashPrefab;
+    public ShootType shootType;
+    public Animation animation;
+    public Transform[] spawnPositions;
+
+    private Animator animator;
+    private GameObject instance;
+    private float directionOffset;
+    private Shooter shooter;
+
+    private void Start()
+    {
+        switch (this.shootType)
+        {
+            case ShootType.Shotgun:
+                this.directionOffset = 0;
+                break;
+        }
+    }
+
+    public GameObject Instantiate()
+    {
+        this.instance = Instantiate(this.prefab);
+        this.shooter = this.instance.GetComponent<Shooter>();
+
+        return this.instance;
+    }
 
     public void Shoot()
     {
-        this.sceneObject.Initilize();
+        if (this.animation.HasEnded())
+        {
+            this.animation.Play();
+            this.muzzleFlashPrefab.GetComponent<MuzzleFlash>().Activate();
+
+            for (int i = 0; i < spawnPositions.Length; i++)
+            {
+                GameObject bulletInstance = Instantiate(bulletPrefab, spawnPositions[i].position, Quaternion.identity);
+                bulletInstance.transform.Rotate(0, this.transform.eulerAngles.y + directionOffset, 0);
+            }
+        }
     }
 
-    public Shoot CreateGun()
+    public GameObject GetInstance()
     {
-        GameObject gunObject = Instantiate(this.prefab);
-        this.sceneObject = gunObject.GetComponent<Shoot>();
-        return this.sceneObject;
+        return this.instance;
     }
+}
+
+public enum ShootType
+{
+    Shotgun
 }
