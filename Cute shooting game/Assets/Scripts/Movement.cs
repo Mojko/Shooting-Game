@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +18,12 @@ public class Movement : MonoBehaviour
 		this.CheckForGround();
 	}
 
-	private void CheckForGround()
+    public void Push(Vector3 direction)
+    {
+        rigidBody.AddForce(direction);
+    }
+
+    private void CheckForGround()
 	{
 		Ray ray = new Ray(this.transform.position, Vector3.down);
 		RaycastHit hitInfo;
@@ -42,7 +48,18 @@ public class Movement : MonoBehaviour
 		this.velocity = this.rigidBody.velocity;
 	}
 
-	public void Jump()
+    public void Move(IsometricVector3 direction)
+    {
+        this.Move(direction.x, direction.z);
+    }
+
+    public void Move(Vector3 direction)
+    {
+       
+        this.Move(direction.x, direction.z);
+    }
+
+    public void Jump()
 	{
 		this.rigidBody.velocity += new Vector3(0, jumpSpeed, 0);
 	}
