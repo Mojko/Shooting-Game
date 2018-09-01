@@ -8,22 +8,17 @@ public class Bullet : MonoBehaviour
     public float speed;
     public bool slowOverTime;
 	
-    private KillOverTime killOverTime;
+    private Timer killOverTime;
     private float maxSpeed;
 
     private void Start()
     {
         this.maxSpeed = this.speed;
 
-        if (slowOverTime)
+        if (!slowOverTime)
         {
-            this.killOverTime = this.GetComponent<KillOverTime>();   
+            this.killOverTime = this.GetComponent<Timer>();   
         }
-    }
-
-    public void CreateBullet(Transform entity, float directionOffset = 0)
-    {
-        this.transform.Rotate(0, entity.eulerAngles.y + directionOffset, 0);
     }
 
     private void Update()
@@ -32,7 +27,12 @@ public class Bullet : MonoBehaviour
 
         if (slowOverTime)
         {
-            this.speed -= this.maxSpeed / this.killOverTime.GetOriginalTime();
+            this.speed = SpeedHelper.Slow(this.speed, this.maxSpeed, 0.05f);
+
+            if (this.speed <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }

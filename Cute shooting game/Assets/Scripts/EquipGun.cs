@@ -8,8 +8,6 @@ public class EquipGun : MonoBehaviour
     [Header("This is the gun you'll start with. Then you can equip more")]
     public Gun gun;
 
-    private GameObject gunObject;
-
     private void Start()
     {
         this.Equip(this.gun);
@@ -18,7 +16,10 @@ public class EquipGun : MonoBehaviour
     public void Equip(Gun gun)
     {
         this.gun = gun;
-        this.gunObject = Instantiate(this.gun.prefab);
-        this.gunObject.transform.SetParent(hand);
+        GameObject gunObject = this.gun.Instantiate();//Instantiate(this.gun.shooter.gameObject);
+        gunObject.transform.SetParent(hand);
+
+        //this.gunObject = Instantiate(this.gun.prefab);
+        //this.gunObject.transform.SetParent(hand);
     }
 }

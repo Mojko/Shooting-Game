@@ -6,14 +6,16 @@ public class CameraFollow : MonoBehaviour
 	public Vector3 offset;
 	
 	public GameObject objectToFollow;
+    [Range(0,1)]public float smoothing;
 	
 	private void Start ()
 	{
+
 	}
 	
 	private void Update ()
 	{
-		Movement.FollowObject(this.gameObject, this.objectToFollow, this.offset);
+		Movement.FollowObject(this.gameObject, this.objectToFollow, this.offset, smoothing);
 	}
 
 	public void SetOffset()

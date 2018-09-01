@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
     public float time;
     public TimerTickType tickType;
     private float originalTime;
+
+    private bool tick = false;
     
     public void Initilize()
     {
@@ -22,6 +24,8 @@ public class Timer : MonoBehaviour
         {
             this.time = this.originalTime;
         }
+
+        tick = true;
     }
 
     public float GetOriginalTime()
@@ -31,7 +35,7 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        if (this.time > 0 && this.originalTime > 0)
+        if (tick)
         {
             switch (this.tickType)
             {
@@ -39,12 +43,18 @@ public class Timer : MonoBehaviour
                     this.time -= 1 * Time.deltaTime;
                     break;
             }
+
+            if (IsFinished())
+            {
+                this.Initilize();
+                tick = false;
+            }
         }
     }
 
-    public bool HasEnded()
+    public bool IsFinished()
     {
-        return this.time <= 0 || this.originalTime <= 0;
+        return (this.time <= 0 || this.originalTime <= 0 || tick == false);
     }
 }
 

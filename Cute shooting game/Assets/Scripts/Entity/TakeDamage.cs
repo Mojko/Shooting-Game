@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class TakeDamage : MonoBehaviour
 {
-    public Rigidbody rigidBody;
+    public MoveTowards moveTowards;
+    public Timer timer;
     public float health;
 
     public void Hurt(float amount)
     {
         this.health -= amount;
-        if(this.rigidBody != null)
+        if(this.moveTowards != null)
         {
-            this.rigidBody.AddForce(-transform.forward * 10000);
+            this.timer.Initilize();
+            this.moveTowards.movement.Push(-transform.forward, PushPower.WEAK);
+            this.moveTowards.enabled = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (this.timer.IsFinished())
+        {
+            this.moveTowards.enabled = true;
         }
     }
 }
