@@ -3,67 +3,67 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour 
+public class Movement : MonoBehaviour
 {
-	public bool IsGrounded { get; private set; }
-	
-	public Rigidbody rigidBody;
-	public float moveSpeed;
-	public float jumpSpeed;
+    public bool IsGrounded { get; private set; }
+
+    public Rigidbody rigidBody;
+    public float moveSpeed;
+    public float jumpSpeed;
+    public float acceleration;
 
     private float maxSpeed;
-    private float minSpeed;
-	private Vector3 velocity;
+    private Vector3 velocity;
 
     private bool canMove;
 
     private void Start()
     {
-        this.minSpeed = -this.moveSpeed;
         this.maxSpeed = this.moveSpeed;
         this.canMove = true;
     }
 
-	private void Update()
-	{
-		this.CheckForGround();
-	}
-
-    public void Push(Vector3 direction, int force)
+    private void Update()
     {
-        this.moveSpeed = this.minSpeed;
+        this.CheckForGround();
+    }
 
-        this.Move(-direction.x, -direction.z, this.moveSpeed * force);
+    public void Push(Vector3 direction, float force)
+    {
+        this.moveSpeed = -force;
+
+        this.Move(direction.x, direction.z, force);
     }
 
     private void CheckForGround()
-	{
-		Ray ray = new Ray(this.transform.position, Vector3.down);
-		RaycastHit hitInfo;
-		if (Physics.Raycast(ray, out hitInfo, 1))
-		{
-			this.IsGrounded = true;
-		}
-		else
-		{
-			this.IsGrounded = false;
-		}
-	}
-	
-	public void Move(float xSpeed, float zSpeed)
-	{
+    {
+        Ray ray = new Ray(this.transform.position, Vector3.down);
+        RaycastHit hitInfo;
+        if (Physics.Raycast(ray, out hitInfo, 1))
+        {
+            this.IsGrounded = true;
+        }
+        else
+        {
+            this.IsGrounded = false;
+        }
+    }
+
+    public void Move(float xSpeed, float zSpeed)
+    {
         /*this.rigidBody.velocity = new Vector3(
 			xSpeed * moveSpeed * Time.deltaTime, 
 			this.rigidBody.velocity.y, 
 			zSpeed * moveSpeed * Time.deltaTime
 		);*/
-        if(this.moveSpeed < this.maxSpeed)
+        if (this.moveSpeed < this.maxSpeed)
         {
-            this.moveSpeed += this.maxSpeed / 25;
+            this.moveSpeed += acceleration;
+            this.moveSpeed = Mathf.Clamp(this.moveSpeed, -this.maxSpeed, this.maxSpeed);
         }
 
         this.Move(xSpeed, zSpeed, this.moveSpeed);
-	}
+    }
 
     public void Move(IsometricVector3 direction)
     {
@@ -72,13 +72,13 @@ public class Movement : MonoBehaviour
 
     private void Move(float xSpeed, float zSpeed, float moveSpeed)
     {
-        this.rigidBody.velocity = Vector3.zero;
+        this.Stop();
 
         Vector3 speed = new Vector3(
-            xSpeed * moveSpeed * Time.deltaTime
+                            xSpeed * moveSpeed * Time.deltaTime
             , this.rigidBody.velocity.y
             , zSpeed * moveSpeed * Time.deltaTime
-        );
+                        );
 
         this.rigidBody.velocity += speed;
 
@@ -91,30 +91,30 @@ public class Movement : MonoBehaviour
     }
 
     public void Jump()
-	{
-		this.rigidBody.velocity += new Vector3(0, jumpSpeed, 0);
-	}
-	
-	public void Rotate(Vector3 towards)
-	{
-		Vector3 movement = new Vector3(towards.x, 0, towards.z);
-		
-		if (movement != Vector3.zero)
-		{
-			this.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.2f);
-		}
-	}
+    {
+        this.rigidBody.velocity += new Vector3(0, jumpSpeed, 0);
+    }
 
-	public void Rotate(float xAxis, float zAxis)
-	{
-		this.Rotate(new Vector3(xAxis, 0, zAxis));
-	}
-	
-	public static void FollowObject(GameObject me, GameObject target, Vector3 offset, float smoothing)
-	{
+    public void Rotate(Vector3 towards)
+    {
+        Vector3 movement = new Vector3(towards.x, 0, towards.z);
+		
+        if (movement != Vector3.zero)
+        {
+            this.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.2f);
+        }
+    }
+
+    public void Rotate(float xAxis, float zAxis)
+    {
+        this.Rotate(new Vector3(xAxis, 0, zAxis));
+    }
+
+    public static void FollowObject(GameObject me, GameObject target, Vector3 offset, float smoothing)
+    {
         Vector3 targetPosition = new Vector3(target.transform.position.x - offset.x, target.transform.position.y - offset.y, target.transform.position.z - offset.z);
         me.transform.position = Vector3.Lerp(me.transform.position, targetPosition, smoothing);
-	}
+    }
 
     public void DisableMovement()
     {
@@ -126,11 +126,16 @@ public class Movement : MonoBehaviour
     {
         this.canMove = true;
     }
+
+    private void Stop()
+    {
+        this.rigidBody.velocity = new Vector3(0, Physics.gravity.y, 0);
+    }
 }
 
 public static class PushPower
 {
-    public const int STRONG = 5;
-    public const int MILD = 3;
-    public const int WEAK = 1;
+    public const float STRONG = 5;
+    public const float MILD = 3;
+    public const float WEAK = 1000f;
 }

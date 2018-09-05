@@ -6,8 +6,9 @@ public class Gun : ScriptableObject
 {
     public Shooter shooter;
     private Shooter shooterInstance;
-    [Range(0,360)] public float[] bulletDirections;
+    [Range(0, 360)] public float[] bulletDirections;
     [Range(0, 4)] public float power;
+    public bool bulletSlowOverTime;
 
     public void Shoot()
     {

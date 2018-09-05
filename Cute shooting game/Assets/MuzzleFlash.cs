@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MuzzleFlash : MonoBehaviour 
+public class MuzzleFlash : MonoBehaviour
 {
+    public float time;
+
     public void Activate()
     {
         this.gameObject.SetActive(true);
-        Invoke("Deactivate", 0.1f);
+        Invoke("Deactivate", time);
     }
 
     public void Deactivate()

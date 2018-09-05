@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: 4b698a577aa753f4598db0ebe0becb83
+timeCreated: 1535913917
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Body
+    100004: Camera
+    100006: Chest
+    100008: Head
+    100010: Head 1
+    100012: Head_end
+    100014: Lamp
+    100016: Lamp.001
+    100018: Lamp.002
+    100020: Lamp.003
+    100022: Lamp.004
+    100024: Lamp.005
+    100026: Lamp.006
+    100028: Lamp.007
+    100030: //RootNode
+    100032: Spine
+    100034: UpperArm.L
+    100036: UpperArm.L.001
+    100038: UpperArm.L.002
+    100040: UpperArm.L.003
+    100042: UpperArm.L.004
+    100044: UpperArm.L.004_end
+    100046: UpperArm.R
+    100048: UpperArm.R.001
+    100050: UpperArm.R.002
+    100052: UpperArm.R.003
+    100054: UpperArm.R.004
+    100056: UpperArm.R.004_end
+    100058: UpperLeg.L
+    100060: UpperLeg.L.001
+    100062: UpperLeg.L.002
+    100064: UpperLeg.L.003
+    100066: UpperLeg.L.003_end
+    100068: UpperLeg.R
+    100070: UpperLeg.R.001
+    100072: UpperLeg.R.002
+    100074: UpperLeg.R.003
+    100076: UpperLeg.R.003_end
+    400000: Armature
+    400002: Body
+    400004: Camera
+    400006: Chest
+    400008: Head
+    400010: Head 1
+    400012: Head_end
+    400014: Lamp
+    400016: Lamp.001
+    400018: Lamp.002
+    400020: Lamp.003
+    400022: Lamp.004
+    400024: Lamp.005
+    400026: Lamp.006
+    400028: Lamp.007
+    400030: //RootNode
+    400032: Spine
+    400034: UpperArm.L
+    400036: UpperArm.L.001
+    400038: UpperArm.L.002
+    400040: UpperArm.L.003
+    400042: UpperArm.L.004
+    400044: UpperArm.L.004_end
+    400046: UpperArm.R
+    400048: UpperArm.R.001
+    400050: UpperArm.R.002
+    400052: UpperArm.R.003
+    400054: UpperArm.R.004
+    400056: UpperArm.R.004_end
+    400058: UpperLeg.L
+    400060: UpperLeg.L.001
+    400062: UpperLeg.L.002
+    400064: UpperLeg.L.003
+    400066: UpperLeg.L.003_end
+    400068: UpperLeg.R
+    400070: UpperLeg.R.001
+    400072: UpperLeg.R.002
+    400074: UpperLeg.R.003
+    400076: UpperLeg.R.003_end
+    2300000: Head
+    3300000: Head
+    4300000: Head
+    4300002: Body
+    7400000: Armature|ArmatureAction
+    7400002: Armature|Walk
+    7400004: Head|ArmatureAction
+    7400006: Head|Walk
+    9500000: //RootNode
+    13700000: Body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

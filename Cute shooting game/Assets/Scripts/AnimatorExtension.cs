@@ -6,6 +6,7 @@ public static class AnimatorExtension
 {
     public static void Play(this Animator @this, Animation animation)
     {
+        Debug.Log("Now playing animation: " + animation.GetName());
         @this.Play(animation.GetName());
     }
 
@@ -23,26 +24,38 @@ public static class AnimatorExtension
 [System.Serializable]
 public class Animation
 {
+    public Animations animation;
     public Animator animator;
     public AnimationClip animationClip;
 
     public void Play()
     {
-        animator.Play(this);
+        this.animator.Play(this);
     }
 
     public bool HasEnded()
     {
-        return animator.AnimationHasEnded(this);
+        return this.animator.AnimationHasEnded(this);
     }
 
     public string GetName()
     {
-        return this.animationClip.name;
+        switch (animation)
+        {
+            case Animations.Shoot:
+                return "Shoot";
+        }
+
+        return "";
     }
 
     public AnimatorStateInfo GetStateInfo()
     {
         return this.animator.GetCurrentAnimatorStateInfo(0);
     }
+}
+
+public enum Animations
+{
+    Shoot
 }

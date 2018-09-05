@@ -6,8 +6,8 @@ public class Bullet : MonoBehaviour
 {
     public Rigidbody rigidBody;
     public float speed;
-    public bool slowOverTime;
-	
+
+    private bool slowOverTime;
     private Timer killOverTime;
     private float maxSpeed;
 
@@ -34,6 +34,11 @@ public class Bullet : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    public void SlowOverTime()
+    {
+        this.slowOverTime = true;
     }
 }
 
