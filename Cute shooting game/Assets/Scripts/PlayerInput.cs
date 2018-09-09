@@ -5,40 +5,40 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
 	
-	public Movement movement;
-	public EquipGun gunEquipper;
-	public AnimatorController animator;
-	
-	private void FixedUpdate ()
-	{
-		this.MoveInput();
-	}
+    public Movement movement;
+    public EquipGun gunEquipper;
+    public AnimatorController animator;
 
-	private void Update()
-	{
-		this.ShootInput();
-	}
+    private void FixedUpdate()
+    {
+        this.MoveInput();
+    }
 
-	private void MoveInput()
-	{
-		float xAxis = Input.GetAxis("Horizontal");
-		float zAxis = Input.GetAxis("Vertical");
+    private void Update()
+    {
+        this.ShootInput();
+    }
 
-		movement.Move(xAxis, zAxis);
+    private void MoveInput()
+    {
+        float xAxis = Input.GetAxis("Horizontal");
+        float zAxis = Input.GetAxis("Vertical");
+
+        movement.Move(new Vector3(xAxis, 0, zAxis));
 		
-		if (Input.GetKey(KeyCode.Space) && movement.IsGrounded)
-		{
-			movement.Jump();
-		}
-	}
+        if (Input.GetKey(KeyCode.Space) && movement.IsGrounded)
+        {
+            movement.Jump();
+        }
+    }
 
-	private void ShootInput()
-	{
-		if (Input.GetMouseButton(0))
-		{
-			gunEquipper.gun.Shoot();
-		}
-	}
+    private void ShootInput()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            gunEquipper.gun.Shoot();
+        }
+    }
 }
 
 

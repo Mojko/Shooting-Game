@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using System.Diagnostics;
+using System.Threading;
 
 public class Shooter : MonoBehaviour
 {
@@ -30,6 +33,7 @@ public class Shooter : MonoBehaviour
             for (int i = 0; i < spawnPositions.Length; i++)
             {
                 GameObject bulletInstance = Instantiate(bulletPrefab, spawnPositions[i].position, Quaternion.identity);
+                bulletInstance.GetComponent<Bullet>().SetSlowOverTime(gun.slowOverTime);
                 bulletInstance.transform.Rotate(0, (this.transform.eulerAngles.y + this.yStartRotation) + gun.GetBulletDirection(i), 0);
             }
 

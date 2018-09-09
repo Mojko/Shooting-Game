@@ -9,12 +9,14 @@ using System;
 public class Timer : MonoBehaviour
 {
     public float time;
-    public TimerTickType tickType;
     private float originalTime;
 
     private bool tick = false;
-    
-    public void Initilize()
+    private OnFinish onFinish;
+
+    public delegate void OnFinish();
+
+    public void Initilize(OnFinish onFinish)
     {
         if (this.time > 0)
         {
@@ -25,7 +27,8 @@ public class Timer : MonoBehaviour
             this.time = this.originalTime;
         }
 
-        tick = true;
+        this.tick = true;
+        this.onFinish = onFinish;
     }
 
     public float GetOriginalTime()
@@ -37,17 +40,13 @@ public class Timer : MonoBehaviour
     {
         if (tick)
         {
-            switch (this.tickType)
-            {
-                case TimerTickType.Seconds:
-                    this.time -= 1 * Time.deltaTime;
-                    break;
-            }
+            this.time -= 1 * Time.deltaTime;
 
-            if (IsFinished())
+            if (this.IsFinished())
             {
-                this.Initilize();
-                tick = false;
+                this.time = originalTime;
+                this.tick = false;
+                this.onFinish.Invoke();
             }
         }
     }
@@ -57,12 +56,6 @@ public class Timer : MonoBehaviour
         return (this.time <= 0 || this.originalTime <= 0 || tick == false);
     }
 }
-
-public enum TimerTickType
-{
-    Seconds
-}
-
 
 
 

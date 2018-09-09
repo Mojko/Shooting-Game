@@ -18,6 +18,10 @@ public class EquipGun : MonoBehaviour
         this.gun = gun;
         GameObject gunObject = this.gun.Instantiate();//Instantiate(this.gun.shooter.gameObject);
         gunObject.transform.SetParent(hand);
+        Debug.Log(gun.rotation);
+        gunObject.transform.localPosition = gun.position;
+        gunObject.transform.localEulerAngles = gun.rotation;//Quaternion.Euler(gun.rotation.x, gun.rotation.y, gun.rotation.z);//gun.rotation.ToQuaternion();
+        gunObject.transform.localScale = gun.scale;
 
         //this.gunObject = Instantiate(this.gun.prefab);
         //this.gunObject.transform.SetParent(hand);

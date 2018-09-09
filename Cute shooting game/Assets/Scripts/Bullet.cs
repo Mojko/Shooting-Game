@@ -6,19 +6,13 @@ public class Bullet : MonoBehaviour
 {
     public Rigidbody rigidBody;
     public float speed;
-    public bool slowOverTime;
-	
-    private Timer killOverTime;
+
+    private bool slowOverTime;
     private float maxSpeed;
 
     private void Start()
     {
         this.maxSpeed = this.speed;
-
-        if (!slowOverTime)
-        {
-            this.killOverTime = this.GetComponent<Timer>();   
-        }
     }
 
     private void Update()
@@ -34,6 +28,11 @@ public class Bullet : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    public void SetSlowOverTime(bool slowOverTime)
+    {
+        this.slowOverTime = slowOverTime;
     }
 }
 
