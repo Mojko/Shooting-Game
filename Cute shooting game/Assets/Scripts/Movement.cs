@@ -33,11 +33,19 @@ public class Movement : MonoBehaviour
         
     }
 
-    public void Push(Vector3 direction, PushPower force)
+    public virtual void Push(Vector3 direction, PushPower force, float? distance = null)
     {
-        Vector3 forceDirection = new Vector3(this.transform.position.x + direction.x, this.transform.position.y + direction.y, this.transform.position.z + direction.z);
-        this.transform.position = forceDirection;
-        //this.rigidBody.AddForce(-transform.forward * 250f);
+        Vector3 forceDirection = new Vector3(direction.x, 0, direction.z);
+
+        if(distance != null)
+        {
+            float newDistance = Mathf.Clamp((float)distance, 0, 10);
+            float remappedDistance = MathHelper.RemapValue(newDistance, 0, 10, 2, 0);
+            Debug.Log("New distance: " + newDistance + ", remappedDistance: " + remappedDistance + ", Real Distance: " + ((float)distance));
+            forceDirection *= remappedDistance / 3;
+        }
+
+        this.transform.position += forceDirection;
     }
 
     private void CheckForGround()

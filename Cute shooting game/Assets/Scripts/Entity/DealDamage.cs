@@ -16,7 +16,7 @@ public class DealDamage : MonoBehaviour
                 TakeDamage target = collider.gameObject.GetComponent<TakeDamage>();
                 if (target != null)
                 {
-                    target.Hurt(this.damage);
+                    target.Hurt(this, this.damage);
                     Destroy(this.gameObject);
                 }
             }

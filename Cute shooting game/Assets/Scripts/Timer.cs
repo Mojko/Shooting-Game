@@ -1,10 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using NUnit.Framework.Internal.Execution;
-using UnityEngine;
-using System.Threading;
-using System;
+﻿using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
@@ -31,11 +25,6 @@ public class Timer : MonoBehaviour
         this.onFinish = onFinish;
     }
 
-    public float GetOriginalTime()
-    {
-        return originalTime;
-    }
-
     private void Update()
     {
         if (tick)
@@ -44,16 +33,34 @@ public class Timer : MonoBehaviour
 
             if (this.IsFinished())
             {
-                this.time = originalTime;
-                this.tick = false;
-                this.onFinish.Invoke();
+                this.Stop();
             }
         }
+    }
+
+    public void Reset()
+    {
+        this.time = this.originalTime;
+    }
+
+    public float GetOriginalTime()
+    {
+        return originalTime;
     }
 
     public bool IsFinished()
     {
         return (this.time <= 0 || this.originalTime <= 0 || tick == false);
+    }
+
+    public void Stop()
+    {
+        this.tick = false;
+        this.time = this.originalTime;
+        if(this.onFinish != null)
+        {
+            this.onFinish.Invoke();
+        }        
     }
 }
 

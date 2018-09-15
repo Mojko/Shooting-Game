@@ -2,38 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TakeDamage : MonoBehaviour
+public class TakeDamage : ColorManipulator
 {
-    public MoveTowards moveTowards;
+    public Movement movement;
     public float health;
-    public Color hitColor;
-    public Renderer[] renderers;
     public Timer timer;
     public PushPower pushPower;
 
-    public void Hurt(float amount)
+    public void Hurt(DealDamage source, float amount)
     {
         this.health -= amount;
-        this.SetColor(this.hitColor);
-        if (this.moveTowards != null)
+        this.ChangeColor();
+        if (this.movement != null)
         {
+            float distance = Vector3.Distance(this.transform.position, source.transform.position);
             this.timer.Initilize(this.OnFinish);
-            this.moveTowards.movement.Push(-transform.forward, this.pushPower);
-            this.moveTowards.enabled = false;
+            this.movement.Push(source.transform.forward, this.pushPower, distance);
+            this.movement.enabled = false;
         }
     }
 
     private void OnFinish()
     {
-        this.moveTowards.enabled = true;
-        this.SetColor(Color.white);
-    }
-
-    public void SetColor(Color color)
-    {
-        foreach (Renderer renderer in this.renderers)
-        {
-            renderer.material.color = color;
-        }
+        this.movement.enabled = true;
+        this.ResetColor();
     }
 }
