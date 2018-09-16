@@ -1,67 +1,78 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public float time;
-    private float originalTime;
+	public float time;
+	private float originalTime;
 
-    private bool tick = false;
-    private OnFinish onFinish;
+	private bool tick = false;
+	private OnFinish onFinish;
 
-    public delegate void OnFinish();
+	public delegate void OnFinish();
 
-    public void Initilize(OnFinish onFinish)
+	public virtual void Initilize(OnFinish onFinish)
+	{
+        if (this.IsStarted())
+        {
+            return;
+        }
+
+		if (this.time > 0)
+		{
+			this.originalTime = this.time; 
+		}
+		else
+		{
+			this.time = this.originalTime;
+		}
+
+		this.tick = true;
+		this.onFinish = onFinish;
+	}
+
+    public bool IsStarted()
     {
-        if (this.time > 0)
-        {
-            this.originalTime = this.time; 
-        }
-        else
-        {
-            this.time = this.originalTime;
-        }
-
-        this.tick = true;
-        this.onFinish = onFinish;
+        return tick;
     }
 
     private void Update()
-    {
-        if (tick)
-        {
-            this.time -= 1 * Time.deltaTime;
+	{
+		if (tick)
+		{
+			this.time -= 1 * Time.deltaTime;
 
-            if (this.IsFinished())
-            {
-                this.Stop();
-            }
-        }
-    }
+			if (this.IsFinished())
+			{
+				this.Stop();
+			}
+		}
+	}
 
-    public void Reset()
-    {
-        this.time = this.originalTime;
-    }
+	public void Reset()
+	{
+		this.time = this.originalTime;
+	}
 
-    public float GetOriginalTime()
-    {
-        return originalTime;
-    }
+	public float GetOriginalTime()
+	{
+		return originalTime;
+	}
 
-    public bool IsFinished()
-    {
-        return (this.time <= 0 || this.originalTime <= 0 || tick == false);
-    }
+	public bool IsFinished()
+	{
+		return (this.time <= 0 || this.originalTime <= 0 || tick == false);
+	}
 
-    public void Stop()
-    {
-        this.tick = false;
-        this.time = this.originalTime;
-        if(this.onFinish != null)
-        {
-            this.onFinish.Invoke();
-        }        
-    }
+	public void Stop()
+	{
+		this.tick = false;
+		this.time = this.originalTime;
+		if (this.onFinish != null)
+		{
+			this.onFinish.Invoke();
+		}        
+	}
 }
 
 

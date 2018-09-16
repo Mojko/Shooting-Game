@@ -7,7 +7,7 @@ public abstract class StateMachine<T>
 {
     private T state;
 
-    protected abstract void OnSetState();
+    public abstract void UpdateState();
 
     public void SetState(T state)
     {

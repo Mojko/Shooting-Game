@@ -5,70 +5,75 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public bool IsGrounded { get; set; }
+	public bool IsGrounded { get; set; }
 
-    public Rigidbody rigidBody;
-    public float movespeed;
-    public float jumpspeed;
-    public float acceleration;
+	public Rigidbody rigidBody;
+	public float movespeed;
+	public float jumpspeed;
+	public float acceleration;
 
-    public void Move(Vector3 direction)
-    {
-        this.rigidBody.velocity = Vector3.zero;
-        this.rigidBody.velocity = direction * movespeed;
-    }
+	public void Move(Vector3 direction)
+	{
+		this.rigidBody.velocity = Vector3.zero;
+		this.rigidBody.velocity = direction * movespeed;
+	}
 
-    public void Rotate(Vector3 direction)
-    {
-        Vector3 rotation = new Vector3(direction.x, 0, direction.z);
+	public void Rotate(Vector3 direction)
+	{
+		Vector3 rotation = new Vector3(direction.x, 0, direction.z);
 
-        if (rotation != Vector3.zero)
-        {
-            this.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(rotation), 0.2f);
-        }
-    }
+		if (rotation != Vector3.zero)
+		{
+			this.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(rotation), 0.2f);
+		}
+	}
 
-    public void Jump()
-    {
+	public void Rotate(Transform target)
+	{
+		this.transform.LookAt(new Vector3(target.transform.position.x, this.transform.position.y, target.transform.position.z));
+	}
+
+	public void Jump()
+	{
         
-    }
+	}
 
-    public virtual void Push(Vector3 direction, PushPower force, float? distance = null)
-    {
-        Vector3 forceDirection = new Vector3(direction.x, 0, direction.z);
+	public virtual void Push(Vector3 direction, PushPower force, float? distance = null)
+	{
+		Vector3 forceDirection = new Vector3(direction.x, 0, direction.z);
 
-        if(distance != null)
-        {
-            float newDistance = Mathf.Clamp((float)distance, 0, 10);
-            float remappedDistance = MathHelper.RemapValue(newDistance, 0, 10, 2, 0);
-            Debug.Log("New distance: " + newDistance + ", remappedDistance: " + remappedDistance + ", Real Distance: " + ((float)distance));
-            forceDirection *= remappedDistance / 3;
-        }
+		if (distance != null)
+		{
+			float newDistance = Mathf.Clamp((float)distance, 0, 10);
+			float remappedDistance = MathHelper.RemapValue(newDistance, 0, 10, 2, 0);
+			Debug.Log("New distance: " + newDistance + ", remappedDistance: " + remappedDistance + ", Real Distance: " + ((float)distance));
+			forceDirection *= remappedDistance / 3;
+		}
 
-        this.transform.position += forceDirection;
-    }
+		this.transform.position += forceDirection;
+	}
 
-    private void CheckForGround()
-    {
-        Ray ray = new Ray(this.transform.position, Vector3.down);
-        RaycastHit hitInfo;
-        if (Physics.Raycast(ray, out hitInfo, 1))
-        {
-            this.IsGrounded = true;
-        }
-        else
-        {
-            this.IsGrounded = false;
-        }
-    }
+	private void CheckForGround()
+	{
+		Ray ray = new Ray(this.transform.position, Vector3.down);
+		RaycastHit hitInfo;
+		if (Physics.Raycast(ray, out hitInfo, 1))
+		{
+			this.IsGrounded = true;
+		}
+		else
+		{
+			this.IsGrounded = false;
+		}
+	}
 
-    public static void FollowObject(GameObject me, GameObject target, Vector3 offset, float smoothing)
-    {
-        Vector3 targetPosition = new Vector3(target.transform.position.x - offset.x, target.transform.position.y - offset.y, target.transform.position.z - offset.z);
-        me.transform.position = Vector3.Lerp(me.transform.position, targetPosition, smoothing);
-    }
+	public static void FollowObject(GameObject me, GameObject target, Vector3 offset, float smoothing)
+	{
+		Vector3 targetPosition = new Vector3(target.transform.position.x - offset.x, target.transform.position.y - offset.y, target.transform.position.z - offset.z);
+		me.transform.position = Vector3.Lerp(me.transform.position, targetPosition, smoothing);
+	}
 
-    /*
+	/*
     public bool IsGrounded { get; private set; }
 
     public Rigidbody rigidBody;
@@ -212,7 +217,7 @@ public static class PushPower
 
 public enum PushPower
 {
-    STRONG = 10,
-    MILD = 5,
-    WEAK = 3
+	STRONG = 10,
+	MILD = 5,
+	WEAK = 3
 }

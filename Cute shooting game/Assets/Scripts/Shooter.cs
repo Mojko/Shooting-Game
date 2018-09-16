@@ -14,16 +14,14 @@ public class Shooter : MonoBehaviour
 
     public new Animation animation;
 
-    private ScreenShake screenShake;
     private float yStartRotation;
 
     private void Start()
     {
-        this.screenShake = Camera.main.GetComponent<ScreenShake>();
         this.yStartRotation = this.transform.eulerAngles.y;
     }
 
-    public void Shoot()
+    public bool Shoot()
     {
         if (this.animation.HasEnded())
         {
@@ -34,10 +32,14 @@ public class Shooter : MonoBehaviour
             {
                 GameObject bulletInstance = Instantiate(bulletPrefab, spawnPositions[i].position, Quaternion.identity);
                 bulletInstance.GetComponent<Bullet>().SetSlowOverTime(gun.slowOverTime);
-                bulletInstance.transform.Rotate(0, (this.transform.eulerAngles.y + this.yStartRotation) + gun.GetBulletDirection(i), 0);
+                bulletInstance.transform.Rotate(0, this.transform.rotation.eulerAngles.y + gun.GetBulletDirection(i), 0);
+                //bulletInstance.transform.Rotate(0, this.transform.rotation.eulerAngles.y + gun.GetBulletDirection(i), 0);
+                bulletInstance.GetComponent<DealDamage>().Ignore(this.transform.root.gameObject);
             }
 
-            screenShake.Shake(gun.power);
+            return true;
         }
+
+        return false;
     }
 }

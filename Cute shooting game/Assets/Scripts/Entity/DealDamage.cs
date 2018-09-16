@@ -1,14 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class DealDamage : MonoBehaviour
 {
     public float damage;
     public Tag[] tagsRequired;
+    private GameObject ignore;
 
     private void OnTriggerEnter(Collider collider)
     {
+        if(collider.gameObject == this.ignore || collider.CompareTag(this.ignore.tag))
+        {
+            return;
+        }
+
         foreach(Tag tag in this.tagsRequired)
         {
             if (collider.CompareTag(TagParser.Parse(tag)))
@@ -21,5 +26,10 @@ public class DealDamage : MonoBehaviour
                 }
             }
         }
+    }
+
+    internal void Ignore(GameObject gameObjectToIgnore)
+    {
+        this.ignore = gameObjectToIgnore;
     }
 }

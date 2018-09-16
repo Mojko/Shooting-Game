@@ -19,9 +19,4 @@ public class LookAtMouse : MonoBehaviour
             this.movement.Rotate(dir);
         }
     }
-
-    public void RotateTowardsMouse()
-    {
-		
-    }
 }

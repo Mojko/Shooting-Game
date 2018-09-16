@@ -7,6 +7,7 @@ public class EquipGun : MonoBehaviour
     [Space(10)]
     [Header("This is the gun you'll start with. Then you can equip more")]
     public Gun gun;
+    [HideInInspector] public Shooter shooter;
 
     private void Start()
     {
@@ -16,14 +17,11 @@ public class EquipGun : MonoBehaviour
     public void Equip(Gun gun)
     {
         this.gun = gun;
-        GameObject gunObject = this.gun.Instantiate();//Instantiate(this.gun.shooter.gameObject);
+        GameObject gunObject = Instantiate(this.gun.prefab);
         gunObject.transform.SetParent(hand);
-        Debug.Log(gun.rotation);
         gunObject.transform.localPosition = gun.position;
-        gunObject.transform.localEulerAngles = gun.rotation;//Quaternion.Euler(gun.rotation.x, gun.rotation.y, gun.rotation.z);//gun.rotation.ToQuaternion();
+        gunObject.transform.localEulerAngles = gun.rotation;
         gunObject.transform.localScale = gun.scale;
-
-        //this.gunObject = Instantiate(this.gun.prefab);
-        //this.gunObject.transform.SetParent(hand);
+        this.shooter = gunObject.GetComponent<Shooter>();
     }
 }

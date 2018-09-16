@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-	
     public Movement movement;
     public EquipGun gunEquipper;
     public AnimatorController animator;
+    public ScreenShake screenShake;
 
     private void FixedUpdate()
     {
@@ -36,7 +36,10 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            gunEquipper.gun.Shoot();
+            if (this.gunEquipper.shooter.Shoot())
+            {
+                this.screenShake.Shake(this.gunEquipper.gun.power);
+            } 
         }
     }
 }

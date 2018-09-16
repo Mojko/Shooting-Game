@@ -4,8 +4,7 @@ using System.Collections;
 [CreateAssetMenu(fileName = "New Gun", menuName = "Gun")]
 public class Gun : ScriptableObject
 {
-    public Shooter shooter;
-    private Shooter shooterInstance;
+    public GameObject prefab;
     [Range(0, 360)] public float[] bulletDirections;
     [Range(0, 4)] public float power;
 
@@ -17,22 +16,9 @@ public class Gun : ScriptableObject
     [Header("Bullet")]
     public bool slowOverTime;
 
-    public void Shoot()
-    {
-        this.shooterInstance.Shoot();
-    }
-
     public float GetBulletDirection(int bulletIndex)
     {
         return this.bulletDirections[bulletIndex];
-    }
-
-    public GameObject Instantiate()
-    {
-        GameObject shooterObject = Instantiate(this.shooter.gameObject);
-        this.shooterInstance = shooterObject.GetComponent<Shooter>();
-        Debug.Log("Created object: " + scale);
-        return shooterObject;
     }
 
     private bool Match(Shooter shooter)

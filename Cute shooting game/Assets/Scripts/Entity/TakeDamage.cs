@@ -16,15 +16,15 @@ public class TakeDamage : ColorManipulator
         if (this.movement != null)
         {
             float distance = Vector3.Distance(this.transform.position, source.transform.position);
-            this.timer.Initilize(this.OnFinish);
             this.movement.Push(source.transform.forward, this.pushPower, distance);
             this.movement.enabled = false;
-        }
-    }
 
-    private void OnFinish()
-    {
-        this.movement.enabled = true;
-        this.ResetColor();
+            
+            this.timer.Initilize(() =>
+            {
+                this.movement.enabled = true;
+                this.ResetColor();
+            });
+        }
     }
 }

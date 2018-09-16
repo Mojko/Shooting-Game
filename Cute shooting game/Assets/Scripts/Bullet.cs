@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        this.rigidBody.velocity = transform.forward * speed * Time.deltaTime;
+        this.rigidBody.velocity = this.transform.forward * speed * Time.deltaTime;
 
         if (slowOverTime)
         {
