@@ -31,7 +31,9 @@ public class Shooter : MonoBehaviour
             for (int i = 0; i < spawnPositions.Length; i++)
             {
                 GameObject bulletInstance = Instantiate(bulletPrefab, spawnPositions[i].position, Quaternion.identity);
-                bulletInstance.GetComponent<Bullet>().SetSlowOverTime(gun.slowOverTime);
+                Bullet bullet = bulletInstance.GetComponent<Bullet>();
+                bullet.SetSlowOverTime(gun.slowOverTime);
+                bullet.source = this;
                 bulletInstance.transform.Rotate(0, this.transform.rotation.eulerAngles.y + gun.GetBulletDirection(i), 0);
                 //bulletInstance.transform.Rotate(0, this.transform.rotation.eulerAngles.y + gun.GetBulletDirection(i), 0);
                 bulletInstance.GetComponent<DealDamage>().Ignore(this.transform.root.gameObject);

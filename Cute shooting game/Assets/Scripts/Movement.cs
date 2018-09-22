@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Movement : MovementBase
 {
 	public bool IsGrounded { get; set; }
 
@@ -12,45 +12,15 @@ public class Movement : MonoBehaviour
 	public float jumpspeed;
 	public float acceleration;
 
-	public void Move(Vector3 direction)
+	public override void Move(Vector3 direction)
 	{
 		this.rigidBody.velocity = Vector3.zero;
 		this.rigidBody.velocity = direction * movespeed;
 	}
 
-	public void Rotate(Vector3 direction)
-	{
-		Vector3 rotation = new Vector3(direction.x, 0, direction.z);
-
-		if (rotation != Vector3.zero)
-		{
-			this.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(rotation), 0.2f);
-		}
-	}
-
-	public void Rotate(Transform target)
-	{
-		this.transform.LookAt(new Vector3(target.transform.position.x, this.transform.position.y, target.transform.position.z));
-	}
-
 	public void Jump()
 	{
         
-	}
-
-	public virtual void Push(Vector3 direction, PushPower force, float? distance = null)
-	{
-		Vector3 forceDirection = new Vector3(direction.x, 0, direction.z);
-
-		if (distance != null)
-		{
-			float newDistance = Mathf.Clamp((float)distance, 0, 10);
-			float remappedDistance = MathHelper.RemapValue(newDistance, 0, 10, 2, 0);
-			Debug.Log("New distance: " + newDistance + ", remappedDistance: " + remappedDistance + ", Real Distance: " + ((float)distance));
-			forceDirection *= remappedDistance / 3;
-		}
-
-		this.transform.position += forceDirection;
 	}
 
 	private void CheckForGround()

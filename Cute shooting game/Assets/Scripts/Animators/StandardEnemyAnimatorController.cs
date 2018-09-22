@@ -4,7 +4,7 @@ using System.Collections;
 public class StandardEnemyAnimatorController : MonoBehaviour 
 {
     public Animator animator;
-    public AIMovement movement;
+    public AIBehaviour movement;
 
     private float xSpeed;
     private float zSpeed;

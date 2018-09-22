@@ -9,7 +9,7 @@ public class DealDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.gameObject == this.ignore || collider.CompareTag(this.ignore.tag))
+        if(collider == null || collider.gameObject == this.ignore || collider.CompareTag(this.ignore.tag))
         {
             return;
         }
@@ -18,7 +18,7 @@ public class DealDamage : MonoBehaviour
         {
             if (collider.CompareTag(TagParser.Parse(tag)))
             {
-                TakeDamage target = collider.gameObject.GetComponent<TakeDamage>();
+                HealthManager target = collider.gameObject.GetComponent<HealthManager>();
                 if (target != null)
                 {
                     target.Hurt(this, this.damage);
@@ -28,7 +28,12 @@ public class DealDamage : MonoBehaviour
         }
     }
 
-    internal void Ignore(GameObject gameObjectToIgnore)
+    public bool IsProjectile()
+    {
+        return this.CompareTag(TagParser.Parse(Tag.Projectile));
+    }
+
+    public void Ignore(GameObject gameObjectToIgnore)
     {
         this.ignore = gameObjectToIgnore;
     }

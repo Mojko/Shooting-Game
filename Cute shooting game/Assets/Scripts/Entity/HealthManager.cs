@@ -1,17 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class TakeDamage : ColorManipulator
+public class HealthManager : ColorManipulator
 {
-    public Movement movement;
+    public MovementBase movement;
     public float health;
-    public Timer timer;
+    public Timer hurtTimer;
     public PushPower pushPower;
+
+    [HideInInspector] public GameObject source;
 
     public void Hurt(DealDamage source, float amount)
     {
         this.health -= amount;
+
+        this.source = source.gameObject;
+
+        if (source.IsProjectile())
+        {
+            this.source = source.GetComponent<Bullet>().source.gameObject;
+        }
+
         this.ChangeColor();
         if (this.movement != null)
         {
@@ -20,11 +31,16 @@ public class TakeDamage : ColorManipulator
             this.movement.enabled = false;
 
             
-            this.timer.Initilize(() =>
+            this.hurtTimer.Initilize(() =>
             {
                 this.movement.enabled = true;
                 this.ResetColor();
             });
         }
+    }
+
+    public bool IsHurt()
+    {
+        return this.source != null;
     }
 }

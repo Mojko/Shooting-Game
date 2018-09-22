@@ -9,9 +9,15 @@ public abstract class StateMachine<T>
 
     public abstract void UpdateState();
 
+    protected virtual void OnSetState(T state)
+    {
+
+    }
+
     public void SetState(T state)
     {
         this.state = state;
+        this.OnSetState(state);
     }
 
     public T GetState()

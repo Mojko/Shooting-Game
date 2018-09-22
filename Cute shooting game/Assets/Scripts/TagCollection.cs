@@ -5,7 +5,8 @@ using UnityEngine;
 public enum Tag
 {
     Player,
-    Enemy
+    Enemy,
+    Projectile
 }
 
 public static class TagParser
@@ -19,6 +20,9 @@ public static class TagParser
 
             case Tag.Enemy:
                 return "Enemy";
+
+            case Tag.Projectile:
+                return "Projectile";
         }
 
         return "";

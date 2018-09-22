@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     public Rigidbody rigidBody;
     public float speed;
 
+    [HideInInspector] public Shooter source;
+
     private bool slowOverTime;
     private float maxSpeed;
 
