@@ -5,15 +5,17 @@ using UnityEngine;
 public class ColorManipulator : MonoBehaviour
 {
     [SerializeField] private Color changeColorTo;
-    [SerializeField] private Model model;
+    [SerializeField] private SkinnedMeshRenderer model;
+    private Color originalColor;
 
     public void ChangeColor()
     {
-        model.SetColor(this.changeColorTo);
+        this.originalColor = this.model.material.color;
+        this.model.material.color = this.changeColorTo;
     }
 
     public void ResetColor()
     {
-        model.ResetColor();
+        this.model.material.color = this.originalColor;
     }
 }

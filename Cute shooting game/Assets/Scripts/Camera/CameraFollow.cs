@@ -7,15 +7,18 @@ public class CameraFollow : MonoBehaviour
 	
 	public GameObject objectToFollow;
     [Range(0,1)]public float smoothing;
-	
+    Vector3 startPosition;
+
 	private void Start ()
 	{
-
+        this.startPosition = this.transform.position;
 	}
 	
 	private void Update ()
 	{
-		Movement.FollowObject(this.gameObject, this.objectToFollow, this.offset, smoothing);
+        //this.transform.position = Vector3.Lerp(this.transform.position, objectToFollow.transform.position - offset, 0.2f);
+        this.transform.position = objectToFollow.transform.position - offset;
+        //Movement.FollowObject(this.gameObject, this.objectToFollow, this.offset, smoothing, 0);
 	}
 
 	public void SetOffset()

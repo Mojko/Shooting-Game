@@ -14,8 +14,8 @@ public class Movement : MovementBase
 
 	public override void Move(Vector3 direction)
 	{
-		this.rigidBody.velocity = Vector3.zero;
-		this.rigidBody.velocity = direction * movespeed;
+        this.rigidBody.MovePosition(this.transform.position + direction * movespeed * Time.deltaTime);
+		//this.rigidBody.velocity = direction * movespeed;
 	}
 
 	public void Jump()
@@ -37,11 +37,17 @@ public class Movement : MovementBase
 		}
 	}
 
-	public static void FollowObject(GameObject me, GameObject target, Vector3 offset, float smoothing)
+	public static void FollowObject(GameObject me, GameObject target, Vector3 offset, float smoothing, float distance)
 	{
-		Vector3 targetPosition = new Vector3(target.transform.position.x - offset.x, target.transform.position.y - offset.y, target.transform.position.z - offset.z);
-		me.transform.position = Vector3.Lerp(me.transform.position, targetPosition, smoothing);
-	}
+        Vector3 newTarget = me.transform.position;
+
+        if(Vector3.Distance(me.transform.position, target.transform.position) > distance)
+        {
+            newTarget = target.transform.position - offset;//newTarget = new Vector3(target.transform.position.x - offset.x, target.transform.position.y - offset.y, target.transform.position.z - offset.z);
+        }
+
+        me.transform.position = Vector3.Lerp(me.transform.position, newTarget, 0.05f);
+    }
 
 	/*
     public bool IsGrounded { get; private set; }
