@@ -7,6 +7,7 @@ public class Gun : ScriptableObject
     public GameObject prefab;
     [Range(0, 360)] public float[] bulletDirections;
     [Range(0, 4)] public float power;
+    public ShootType shootType;
 
     [Header("In hand")]
     public Vector3 position;
@@ -25,4 +26,10 @@ public class Gun : ScriptableObject
     {
         return shooter.spawnPositions.Length == bulletDirections.Length;
     }
+}
+
+public enum ShootType
+{
+    Click,
+    Hold
 }

@@ -34,7 +34,11 @@ public class PlayerInput : MonoBehaviour
 
     private void ShootInput()
     {
-        if (Input.GetMouseButton(0))
+        bool canShoot = (this.gunEquipper.gun.shootType == ShootType.Click) 
+            ? Input.GetMouseButtonDown(0) 
+            : Input.GetMouseButton(0);
+
+        if (canShoot)
         {
             if (this.gunEquipper.shooter.Shoot())
             {
