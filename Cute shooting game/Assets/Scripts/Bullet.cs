@@ -17,10 +17,13 @@ public class Bullet : MonoBehaviour
         this.maxSpeed = this.speed;
     }
 
+    private void FixedUpdate()
+    {
+        this.rigidBody.MovePosition(this.transform.position + this.transform.forward * speed * Time.deltaTime);
+    }
+
     private void Update()
     {
-        this.rigidBody.velocity = this.transform.forward * speed * Time.deltaTime;
-
         if (slowOverTime)
         {
             this.speed = SpeedHelper.Slow(this.speed, this.maxSpeed, 0.05f);

@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     public Movement movement;
+    public Animator animator;
     public EquipGun gunEquipper;
-    public AnimatorController animator;
     public ScreenShake screenShake;
 
     private void FixedUpdate()
@@ -17,6 +17,11 @@ public class PlayerInput : MonoBehaviour
     private void Update()
     {
         this.ShootInput();
+
+        if (Input.GetMouseButton(2))
+        {
+            Camera.main.GetComponent<CameraFollow>().Rotate(this.transform);
+        }
     }
 
     private void MoveInput()
@@ -24,8 +29,11 @@ public class PlayerInput : MonoBehaviour
         float xAxis = Input.GetAxis("Horizontal");
         float zAxis = Input.GetAxis("Vertical");
 
-        movement.Move(new Vector3(xAxis, 0, zAxis));
-		
+        this.movement.Move(new Vector3(xAxis, 0, zAxis));
+        this.movement.Rotate(new Vector3(xAxis, 0, zAxis));
+        this.animator.SetFloat("xSpeed", xAxis);
+        this.animator.SetFloat("zSpeed", zAxis);
+
         if (Input.GetKey(KeyCode.Space) && movement.IsGrounded)
         {
             movement.Jump();

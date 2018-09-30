@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementBase : MonoBehaviour
+public class MovementBase : MonoBehaviour, IMovement
 {
     public virtual void Move(Vector3 direction)
     {

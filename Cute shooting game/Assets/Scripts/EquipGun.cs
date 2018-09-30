@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class EquipGun : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class EquipGun : MonoBehaviour
 
     public void Equip(Gun gun)
     {
+        if(this.hand.root != this.transform)
+        {
+            throw new Exception("Hand object is not attached to the gunholder");
+        }
+
         this.gun = gun;
         GameObject gunObject = Instantiate(this.gun.prefab);
         gunObject.transform.SetParent(hand);
