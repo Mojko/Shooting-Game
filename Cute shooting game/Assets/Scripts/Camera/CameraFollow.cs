@@ -25,14 +25,6 @@ public class CameraFollow : MonoBehaviour
         //Movement.FollowObject(this.gameObject, this.objectToFollow, this.offset, smoothing, 0);
 	}
 
-    public void Rotate(Transform target)
-    {
-        currentX += Input.GetAxis("Mouse X");
-        currentY += Input.GetAxis("Mouse Y");
-        this.transform.position = target.position + Quaternion.Euler(currentY, currentX, 0) * new Vector3(0, 0, -10f);
-        this.transform.LookAt(target.position);
-    }
-
     public void SetOffset()
 	{
 		this.offset = new Vector3(-this.transform.position.x, -this.transform.position.y, -this.transform.position.z);

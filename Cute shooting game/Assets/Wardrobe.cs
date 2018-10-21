@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Wardrobe : MonoBehaviour 
 {
-    public SkinnedMeshRenderer skinnedMeshRenderer;
+    public SkinnedMeshRenderer skin;
     public SkinnedMeshRenderer[] clothes;
 
 	private void Start ()
@@ -12,8 +12,8 @@ public class Wardrobe : MonoBehaviour
         {
             SkinnedMeshRenderer newMesh = Instantiate(cloth);
             newMesh.transform.parent = this.transform;
-            newMesh.bones = this.skinnedMeshRenderer.bones;
-            newMesh.rootBone = this.skinnedMeshRenderer.rootBone;
+            newMesh.bones = this.skin.bones;
+            newMesh.rootBone = this.skin.rootBone;
         }
 	}
 	

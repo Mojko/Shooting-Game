@@ -5,17 +5,27 @@ using UnityEngine;
 public class ColorManipulator : MonoBehaviour
 {
     [SerializeField] private Color changeColorTo;
-    [SerializeField] private SkinnedMeshRenderer model;
+    [SerializeField] private Wardrobe wardrobe;
     private Color originalColor;
 
     public void ChangeColor()
     {
-        this.originalColor = this.model.material.color;
-        this.model.material.color = this.changeColorTo;
+        this.wardrobe.skin.material.color = this.changeColorTo;
+
+        foreach(SkinnedMeshRenderer mesh in this.wardrobe.clothes)
+        {
+            this.originalColor = Color.white;
+            mesh.material.color = this.changeColorTo;
+        }
     }
 
     public void ResetColor()
     {
-        this.model.material.color = this.originalColor;
+        this.wardrobe.skin.material.color = this.originalColor;
+
+        foreach (SkinnedMeshRenderer mesh in this.wardrobe.clothes)
+        {
+            mesh.material.color = this.originalColor;
+        }
     }
 }

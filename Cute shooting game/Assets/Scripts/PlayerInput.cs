@@ -8,6 +8,7 @@ public class PlayerInput : MonoBehaviour
     public Animator animator;
     public EquipGun gunEquipper;
     public ScreenShake screenShake;
+    public LookAtMouse lookAtMouse;
 
     private void FixedUpdate()
     {
@@ -17,11 +18,6 @@ public class PlayerInput : MonoBehaviour
     private void Update()
     {
         this.ShootInput();
-
-        if (Input.GetMouseButton(2))
-        {
-            Camera.main.GetComponent<CameraFollow>().Rotate(this.transform);
-        }
     }
 
     private void MoveInput()
@@ -29,8 +25,23 @@ public class PlayerInput : MonoBehaviour
         float xAxis = Input.GetAxis("Horizontal");
         float zAxis = Input.GetAxis("Vertical");
 
-        this.movement.Move(new Vector3(xAxis, 0, zAxis));
-        this.movement.Rotate(new Vector3(xAxis, 0, zAxis));
+        Quaternion rotation = Quaternion.AngleAxis(Camera.main.transform.eulerAngles.y, Vector3.up);
+
+        this.movement.Move(rotation * new Vector3(xAxis, 0, zAxis));
+
+        if (!Input.GetMouseButton(1))
+        {
+            this.lookAtMouse.Disable();
+            this.movement.Rotate(rotation * new Vector3(xAxis, 0, zAxis));
+        }
+        else
+        {
+            if (!this.lookAtMouse.enabled)
+            {
+                this.lookAtMouse.Enable();
+            }
+        }
+        
         this.animator.SetFloat("xSpeed", xAxis);
         this.animator.SetFloat("zSpeed", zAxis);
 

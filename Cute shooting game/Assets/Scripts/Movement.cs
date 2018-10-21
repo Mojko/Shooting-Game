@@ -15,7 +15,6 @@ public class Movement : MovementBase
 	public override void Move(Vector3 direction)
 	{
         this.rigidBody.MovePosition(this.transform.position + direction * movespeed * Time.deltaTime);
-		//this.rigidBody.velocity = direction * movespeed;
 	}
 
 	public void Jump()
