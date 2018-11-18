@@ -5,6 +5,6 @@ using UnityEngine;
 public interface IMovement
 {
     void Move(Vector3 direction);
-    void Rotate(Vector3 direction);
+    void Rotate(Vector3 direction, float smooth);
     void Push(Vector3 direction, PushPower force, float? distance);
 }

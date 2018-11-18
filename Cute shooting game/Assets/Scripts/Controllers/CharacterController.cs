@@ -23,9 +23,9 @@ public class CharacterController : MonoBehaviour, IMovement
         this.animator.SetFloat("zSpeed", direction.z);
     }
 
-    public void Rotate(Vector3 direction)
+    public void Rotate(Vector3 direction, float smooth)
     {
-        this.movement.Rotate(direction);
+        this.movement.Rotate(direction, smooth);
     }
 
     public void Push(Vector3 direction, PushPower force, float? distance)

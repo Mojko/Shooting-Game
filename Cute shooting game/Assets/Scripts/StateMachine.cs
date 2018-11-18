@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class StateMachine<T>
+public class StateMachine<T>
 {
     private T state;
 
-    public abstract void UpdateState();
+    public virtual void UpdateState()
+    {
+
+    }
 
     protected virtual void OnSetState(T state)
     {
@@ -16,6 +19,14 @@ public abstract class StateMachine<T>
 
     public void SetState(T state)
     {
+        if(this.state != null)
+        {
+            if(this.state.Equals(state))
+            {
+                return;
+            }
+        }
+
         this.state = state;
         this.OnSetState(state);
     }

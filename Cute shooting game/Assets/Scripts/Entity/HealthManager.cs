@@ -31,7 +31,7 @@ public class HealthManager : ColorManipulator
             this.movement.enabled = false;
 
             
-            this.hurtTimer.Initilize(() =>
+            this.hurtTimer.StartTimer(() =>
             {
                 this.movement.enabled = true;
                 this.ResetColor();

@@ -10,12 +10,12 @@ public class AIShootController : MonoBehaviour
 	{
 	    if(Random.Range(1,100) == 1 && !this.shootTimer.IsStarted())
         {
-            this.shootTimer.Initilize(this.Shoot);
+            this.shootTimer.StartTimer(this.Shoot);
         }	
 	}
 
     private void Shoot()
     {
-        this.gunController.shooter.Shoot();
+        //this.gunController.shooter.Shoot();
     }
 }

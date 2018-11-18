@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public Rigidbody rigidBody;
     public float speed;
+    public GameObject onDeathParticle;
 
     [HideInInspector] public Shooter source;
 
@@ -33,6 +34,17 @@ public class Bullet : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if(collider.name == this.name)
+        {
+            return;
+        }
+
+        Instantiate(this.onDeathParticle, this.transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 
     public void SetSlowOverTime(bool slowOverTime)

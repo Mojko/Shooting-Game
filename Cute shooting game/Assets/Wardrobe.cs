@@ -8,17 +8,13 @@ public class Wardrobe : MonoBehaviour
 
 	private void Start ()
 	{
-		foreach(var cloth in clothes)
+        for(int i = 0; i < this.clothes.Length; i++)
         {
-            SkinnedMeshRenderer newMesh = Instantiate(cloth);
+            SkinnedMeshRenderer newMesh = Instantiate(this.clothes[i]);
+            this.clothes[i] = newMesh;
             newMesh.transform.parent = this.transform;
             newMesh.bones = this.skin.bones;
             newMesh.rootBone = this.skin.rootBone;
         }
-	}
-	
-	private void Update ()
-	{
-		
 	}
 }

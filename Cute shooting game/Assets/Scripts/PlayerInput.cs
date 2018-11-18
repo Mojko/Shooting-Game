@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Animations;
+using UnityEngine.Events;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -10,17 +12,14 @@ public class PlayerInput : MonoBehaviour
     public ScreenShake screenShake;
     public LookAtMouse lookAtMouse;
 
+    private ThirdPersonCamera thirdPersonCamera;
+
+    private void Start()
+    {
+        this.thirdPersonCamera = Camera.main.GetComponent<ThirdPersonCamera>();
+    }
+
     private void FixedUpdate()
-    {
-        this.MoveInput();
-    }
-
-    private void Update()
-    {
-        this.ShootInput();
-    }
-
-    private void MoveInput()
     {
         float xAxis = Input.GetAxis("Horizontal");
         float zAxis = Input.GetAxis("Vertical");
@@ -29,41 +28,93 @@ public class PlayerInput : MonoBehaviour
 
         this.movement.Move(rotation * new Vector3(xAxis, 0, zAxis));
 
-        if (!Input.GetMouseButton(1))
+        if (Input.GetMouseButton(2))
         {
-            this.lookAtMouse.Disable();
-            this.movement.Rotate(rotation * new Vector3(xAxis, 0, zAxis));
+            this.Aim();
         }
         else
         {
-            if (!this.lookAtMouse.enabled)
-            {
-                this.lookAtMouse.Enable();
-            }
+            this.StopAim();
         }
-        
+
+        if (Input.GetMouseButton(1))
+        {
+            this.transform.rotation = Quaternion.Euler(new Vector3(this.transform.rotation.eulerAngles.x
+                , this.thirdPersonCamera.transform.rotation.eulerAngles.y
+                , this.transform.rotation.eulerAngles.z
+            ));
+        }
+        else
+        {
+            this.movement.Rotate(rotation * new Vector3(xAxis, 0, zAxis), 0.1f);
+        }
+
         this.animator.SetFloat("xSpeed", xAxis);
         this.animator.SetFloat("zSpeed", zAxis);
 
-        if (Input.GetKey(KeyCode.Space) && movement.IsGrounded)
+        if (Input.GetKey(KeyCode.Space))
         {
             movement.Jump();
         }
     }
 
-    private void ShootInput()
+    private void Update()
     {
-        bool canShoot = (this.gunEquipper.gun.shootType == ShootType.Click) 
-            ? Input.GetMouseButtonDown(0) 
+        bool canShoot = (this.gunEquipper.gun.shootType == ShootType.Click)
+            ? Input.GetMouseButtonDown(0)
             : Input.GetMouseButton(0);
+
+        if (this.gunEquipper.gun.isOneHanded)
+        {
+            this.animator.SetTrigger("OneHanded");
+        }
+        else
+        {
+            this.animator.SetTrigger("TwoHanded");
+        }
 
         if (canShoot)
         {
-            if (this.gunEquipper.shooter.Shoot())
-            {
-                this.screenShake.Shake(this.gunEquipper.gun.power);
-            } 
+            this.Shoot();
         }
+        else
+        {
+            this.StopShoot();
+        }
+    }
+
+    private void Aim()
+    {
+        if (!this.lookAtMouse.enabled)
+        {
+            this.lookAtMouse.Enable();
+            this.animator.SetBool("FreeMoving", true);
+        }
+
+        this.transform.rotation = this.thirdPersonCamera.transform.rotation;
+        this.thirdPersonCamera.SetCameraState(CameraState.ZoomedIn);
+    }
+
+    private void StopAim()
+    {
+        this.lookAtMouse.Disable();
+        this.animator.SetBool("FreeMoving", false);
+        this.thirdPersonCamera.SetCameraState(CameraState.Normal);
+        this.transform.rotation = Quaternion.Euler(0, this.transform.rotation.eulerAngles.y, 0);
+    }
+
+    private void Shoot()
+    {
+        this.animator.SetBool("Shoot", true);
+        if (this.gunEquipper.shooter.Shoot(this.animator))
+        {
+            this.screenShake.Shake(this.gunEquipper.gun.power);
+        }
+    }
+
+    private void StopShoot()
+    {
+        this.animator.SetBool("Shoot", false);
     }
 }
 

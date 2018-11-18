@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 using System;
 using System.Diagnostics;
 using System.Threading;
+using Debug = UnityEngine.Debug;
+using UnityEngine.Events;
 
 public class Shooter : MonoBehaviour
 {
     public Gun gun;
+    public Timer timer;
 
-    public Animator animator;
     public GameObject bulletPrefab;
     public GameObject muzzleFlashPrefab;
     public Transform[] spawnPositions;
@@ -16,33 +19,53 @@ public class Shooter : MonoBehaviour
     public new Animation animation;
 
     private float yStartRotation;
+    private int nextBulletIndex;
 
     private void Start()
     {
         this.yStartRotation = this.transform.eulerAngles.y;
     }
 
-    public bool Shoot()
+    public bool Shoot(Animator animator)
     {
-        if (!this.animator.AnimationHasEnded(Animation.Shoot) && this.gun.shootType == ShootType.Hold)
+        if (this.timer.IsStarted())
         {
             return false;
         }
 
-        this.animator.Play(Animation.Shoot);
-        this.muzzleFlashPrefab.GetComponent<MuzzleFlash>().Activate();
+        this.timer.StartTimer(() => { });
+
+        if (this.muzzleFlashPrefab != null)
+        {
+            this.muzzleFlashPrefab.GetComponent<MuzzleFlash>().Activate();
+        }
+
+        if (this.gun.shootOneBulletAtATime)
+        {
+            this.FireBullet(this.nextBulletIndex);
+            this.nextBulletIndex++;
+            if(this.nextBulletIndex >= this.spawnPositions.Length)
+            {
+                this.nextBulletIndex = 0;
+            }
+            return true;
+        }
 
         for (int i = 0; i < spawnPositions.Length; i++)
         {
-            GameObject bulletInstance = Instantiate(bulletPrefab, spawnPositions[i].position, Quaternion.identity);
-            Bullet bullet = bulletInstance.GetComponent<Bullet>();
-            bullet.SetSlowOverTime(gun.slowOverTime);
-            bullet.source = this;
-            bulletInstance.transform.Rotate(0, this.transform.rotation.eulerAngles.y + gun.GetBulletDirection(i), 0);
-            //bulletInstance.transform.Rotate(0, this.transform.rotation.eulerAngles.y + gun.GetBulletDirection(i), 0);
-            bulletInstance.GetComponent<DealDamage>().Ignore(this.transform.root.gameObject);
+            this.FireBullet(i);
         }
 
         return true;
+    }
+
+    private void FireBullet(int index)
+    {
+        GameObject bulletInstance = Instantiate(bulletPrefab, spawnPositions[index].position, Quaternion.identity);
+        Bullet bullet = bulletInstance.GetComponent<Bullet>();
+        bullet.SetSlowOverTime(gun.slowOverTime);
+        bullet.source = this;
+        bulletInstance.transform.Rotate(this.transform.root.rotation.eulerAngles.x, this.transform.rotation.eulerAngles.y + gun.GetBulletDirection(index), 0);
+        bulletInstance.GetComponent<DealDamage>().Ignore(this.transform.root.gameObject);
     }
 }

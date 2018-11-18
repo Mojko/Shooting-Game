@@ -6,7 +6,19 @@ public class ColorManipulator : MonoBehaviour
 {
     [SerializeField] private Color changeColorTo;
     [SerializeField] private Wardrobe wardrobe;
-    private Color originalColor;
+    private Color[] originalColors;
+
+    private void Start()
+    {
+        this.originalColors = new Color[wardrobe.clothes.Length + 1];
+
+        this.originalColors[0] = this.wardrobe.skin.material.color;
+
+        for(int i = 0; i < this.wardrobe.clothes.Length; i++)
+        {
+            this.originalColors[i] = this.wardrobe.clothes[i].material.color;
+        }
+    }
 
     public void ChangeColor()
     {
@@ -14,18 +26,17 @@ public class ColorManipulator : MonoBehaviour
 
         foreach(SkinnedMeshRenderer mesh in this.wardrobe.clothes)
         {
-            this.originalColor = Color.white;
             mesh.material.color = this.changeColorTo;
         }
     }
 
     public void ResetColor()
     {
-        this.wardrobe.skin.material.color = this.originalColor;
+        this.wardrobe.skin.material.color = this.originalColors[0];
 
-        foreach (SkinnedMeshRenderer mesh in this.wardrobe.clothes)
+        for (int i = 0; i < this.wardrobe.clothes.Length; i++)
         {
-            mesh.material.color = this.originalColor;
+            this.wardrobe.clothes[i].material.color = this.originalColors[i];
         }
     }
 }

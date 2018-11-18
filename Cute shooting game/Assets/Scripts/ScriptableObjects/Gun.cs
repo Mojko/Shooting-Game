@@ -8,6 +8,7 @@ public class Gun : ScriptableObject
     [Range(0, 360)] public float[] bulletDirections;
     [Range(0, 4)] public float power;
     public ShootType shootType;
+    public bool isOneHanded;
 
     [Header("In hand")]
     public Vector3 position;
@@ -16,6 +17,7 @@ public class Gun : ScriptableObject
 
     [Header("Bullet")]
     public bool slowOverTime;
+    public bool shootOneBulletAtATime;
 
     public float GetBulletDirection(int bulletIndex)
     {

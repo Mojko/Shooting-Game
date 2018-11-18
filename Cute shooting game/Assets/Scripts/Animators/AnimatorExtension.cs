@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public static class AnimatorExtension
@@ -11,12 +12,17 @@ public static class AnimatorExtension
 
     public static bool IsPlaying(this Animator @this, Animation animation)
     {
-        return @this.GetCurrentAnimatorStateInfo(0).IsName(animation.GetName());
+        return @this.GetCurrentAnimatorStateInfo(0).IsName(animation.GetName()) && @this.GetCurrentAnimatorStateInfo(0).normalizedTime > 0;
     }
 
     public static bool AnimationHasEnded(this Animator @this, Animation animation)
     {
-        return (@this.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.0f && @this.IsPlaying(animation)) || !@this.IsPlaying(animation);
+        return (@this.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0f && @this.IsPlaying(animation));
+    }
+
+    public static void SetAnimatorController(this Animator @this, RuntimeAnimatorController controller)
+    {
+        @this.runtimeAnimatorController = controller;
     }
 
 }
@@ -38,31 +44,3 @@ public class Animation
         return this.name;
     }
 }
-
-/*
-[System.Serializable]
-public class Animation
-{
-    public Animator animator;
-    public AnimationClip animationClip;
-
-    public void Play()
-    {
-        animator.Play(this);
-    }
-
-    public bool HasEnded()
-    {
-        return animator.AnimationHasEnded(this);
-    }
-
-    public string GetName()
-    {
-        return this.animationClip.name;
-    }
-
-    public AnimatorStateInfo GetStateInfo()
-    {
-        return this.animator.GetCurrentAnimatorStateInfo(0);
-    }
-}*/

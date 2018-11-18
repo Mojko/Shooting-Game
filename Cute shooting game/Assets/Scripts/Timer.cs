@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
 
 	public delegate void OnFinish();
 
-	public virtual void Initilize(OnFinish onFinish)
+	public virtual void StartTimer(OnFinish onFinish)
 	{
         if (this.IsStarted())
         {

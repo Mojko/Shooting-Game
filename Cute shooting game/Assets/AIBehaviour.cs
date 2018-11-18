@@ -13,45 +13,14 @@ public class AIBehaviour : MovementBase
     [Header("AI")]
     public NavMeshAgent navMeshAgent;
     public HealthManager healthManager;
-	public float radius;
 
-    [HideInInspector] public Transform target;
+    [Header("Notify me")]
+    public AIController aiController;
+
+    public Transform target;
 
     private Vector3 destination;
-	private bool stopped;
-	private AIStateMachine stateMachine;
-
-	private void Start()
-	{
-		this.stateMachine = new AIStateMachine(this);
-		this.stateMachine.SetState(this.stateMachine.RoamingState);
-		this.ChangeDestination();
-	}
-
-	private void Update()
-	{
-		if (this.ReachedDestination())
-		{
-			if (this.stopped == false)
-			{
-				if(Random.Range(1,3) == 1)
-				{
-					this.stopTimer.Initilize(() => 
-					{
-						this.stopped = false;	
-					});		
-				} 
-				else 
-				{
-					this.changeDestinationTimer.Initilize(ChangeDestination);
-				}
-
-				this.stopped = true;
-			}
-		}
-
-		this.stateMachine.UpdateState();
-	}
+	protected bool stopped;
 
 	public override void Push(Vector3 direction, PushPower force, float? distance = null)
 	{
@@ -64,7 +33,7 @@ public class AIBehaviour : MovementBase
             Debug.Log("Is Hurt " + this.target.name);
         }
 
-        this.pushTimer.Initilize(() =>
+        this.pushTimer.StartTimer(() =>
 		{
             Debug.Log("Finished pushing");
 			this.navMeshAgent.enabled = true;
@@ -73,16 +42,16 @@ public class AIBehaviour : MovementBase
 			{
 				this.navMeshAgent.SetDestination(this.destination);
 			}
-
-            this.stateMachine.SetState(this.stateMachine.AggressiveState);
 		});
 	}
 
-	public void ChangeDestination()
+	public void ChangeDestination(Vector3 destination)
 	{
+        Debug.Log("Changed destination");
 		this.stopped = false;
-		this.destination = new Vector3(this.transform.position.x + radius * MathHelper.Choose(-1, 1), this.transform.position.y, this.transform.position.z + radius * MathHelper.Choose(-1, 1));
+        this.destination = destination;
 		this.navMeshAgent.SetDestination(destination);
+        this.aiController.OnChangeDestination();
 	}
 
     public void Chase(Transform target)
@@ -90,58 +59,18 @@ public class AIBehaviour : MovementBase
         this.target = target;
     }
 
-	private bool ReachedDestination()
+	private bool HasReachedDestination()
 	{
-		return (Vector3.Distance(this.transform.position, this.navMeshAgent.destination) <= 0.5f);
-	}
-}
-
-public class AIStateMachine : StateMachine<UnityAction>
-{
-	private AIBehaviour behaviour;
-
-	public AIStateMachine(AIBehaviour behaviour)
-	{
-		this.behaviour = behaviour;
+		return Vector3.Distance(this.transform.position, this.navMeshAgent.destination) <= 0.5f;
 	}
 
-	public void StopState()
-	{
-
-	}
-
-	public void RoamingState()
-	{
-
-	}
-
-	public void AggressiveState()
-	{
-		if (this.behaviour.navMeshAgent.updateRotation)
-		{
-			this.behaviour.navMeshAgent.updateRotation = false;
-		}
-
-        if(this.behaviour.target != null)
-        {
-            this.behaviour.LookAt(this.behaviour.target);
-        }
-	}
-
-    protected override void OnSetState(UnityAction state)
+    public bool IsMoving()
     {
-        if(state == this.RoamingState)
-        {
-            this.behaviour.changeDestinationTimer.Initilize(this.behaviour.ChangeDestination);
-        }
+        return !this.stopped;
     }
 
-    public override void UpdateState()
-	{
-		UnityAction action = this.GetState();
-		if (action != null)
-		{
-			action.Invoke();
-		}
-	}
+    public bool CanMoveTowards()
+    {
+        return Vector3.Distance(this.transform.position, this.target.position) > 15f;
+    }
 }

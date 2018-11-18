@@ -16,7 +16,7 @@ public class LookAtMouse : MonoBehaviour
             var lookAtPosition = mouseRay.GetPoint(hitDistance);
             var dir = lookAtPosition - this.transform.position;
             var rot = Quaternion.LookRotation(lookAtPosition, Vector3.up);
-            this.movement.Rotate(Camera.main.transform.forward);
+            this.movement.Rotate(Camera.main.transform.forward, 0.2f);
         }
     }
 }

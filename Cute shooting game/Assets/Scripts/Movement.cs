@@ -19,14 +19,14 @@ public class Movement : MovementBase
 
 	public void Jump()
 	{
-        
+        this.rigidBody.AddForce(Vector3.up * 500f);
 	}
 
 	private void CheckForGround()
 	{
 		Ray ray = new Ray(this.transform.position, Vector3.down);
 		RaycastHit hitInfo;
-		if (Physics.Raycast(ray, out hitInfo, 1))
+		if (Physics.Raycast(ray, out hitInfo, 1f))
 		{
 			this.IsGrounded = true;
 		}

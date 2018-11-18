@@ -19,7 +19,6 @@ public class ScreenShake : MonoBehaviour
         {
             this.transform.position = new Vector3(this.transform.position.x + intensity * MathHelper.Choose(-1, 1), this.transform.position.y + intensity * MathHelper.Choose(-1,1), this.transform.position.z);
             intensity -= 0.1f;
-            Debug.Log(intensity);
             if(intensity <= 0)
             {
                 shake = false;

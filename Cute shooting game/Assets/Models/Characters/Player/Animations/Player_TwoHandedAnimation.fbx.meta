@@ -1,0 +1,1944 @@
+fileFormatVersion: 2
+guid: 90ddb999366c9154b86328e15dc95f96
+timeCreated: 1540842479
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Chest
+    100004: Cube.000
+    100006: Cube.001
+    100008: Cylinder
+    100010: Hat
+    100012: Head
+    100014: L_Arm
+    100016: L_Foot
+    100018: L_Foot_end
+    100020: L_Hand
+    100022: L_Hand_end
+    100024: L_Leg
+    100026: L_Shoulder
+    100028: L_Thighs
+    100030: L_UpperArm
+    100032: L_UpperLeg
+    100034: Mesh
+    100036: Mesh.000
+    100038: Mesh.003
+    100040: Mesh.006
+    100042: Neck
+    100044: Nose
+    100046: Nose_end
+    100048: //RootNode
+    100050: R_Arm
+    100052: R_Foot
+    100054: R_Foot_end
+    100056: R_Hand
+    100058: R_Hand_end
+    100060: R_Leg
+    100062: R_Shoulder
+    100064: R_Thighs
+    100066: R_UpperArm
+    100068: R_UpperLeg
+    100070: Spine
+    400000: Armature
+    400002: Chest
+    400004: Cube.000
+    400006: Cube.001
+    400008: Cylinder
+    400010: Hat
+    400012: Head
+    400014: L_Arm
+    400016: L_Foot
+    400018: L_Foot_end
+    400020: L_Hand
+    400022: L_Hand_end
+    400024: L_Leg
+    400026: L_Shoulder
+    400028: L_Thighs
+    400030: L_UpperArm
+    400032: L_UpperLeg
+    400034: Mesh
+    400036: Mesh.000
+    400038: Mesh.003
+    400040: Mesh.006
+    400042: Neck
+    400044: Nose
+    400046: Nose_end
+    400048: //RootNode
+    400050: R_Arm
+    400052: R_Foot
+    400054: R_Foot_end
+    400056: R_Hand
+    400058: R_Hand_end
+    400060: R_Leg
+    400062: R_Shoulder
+    400064: R_Thighs
+    400066: R_UpperArm
+    400068: R_UpperLeg
+    400070: Spine
+    4300000: Mesh
+    4300002: Cube.001
+    4300004: Cube.000
+    4300006: Mesh.006
+    4300008: Mesh.003
+    4300010: Cylinder
+    4300012: Mesh.000
+    4300014: Hat
+    7400000: Armature|Aim_Test
+    7400002: Armature|Aim_Test.001
+    7400004: Armature|ArmatureAction
+    7400006: Armature|Idle
+    7400008: Armature|Idle.001
+    7400010: Armature|Idle.002
+    7400012: Armature|Idle.003
+    7400014: Armature|Move_Backwards
+    7400016: Armature|Move_Forward
+    7400018: Armature|Move_Left
+    7400020: Armature|Move_Right
+    7400022: Armature|OneHanded_Aim
+    7400024: Armature|TwoHanded_Aim
+    7400026: Armature|TwoHanded_Aim.001
+    9500000: //RootNode
+    13700000: Cube.000
+    13700002: Cube.001
+    13700004: Cylinder
+    13700006: Hat
+    13700008: Mesh
+    13700010: Mesh.000
+    13700012: Mesh.003
+    13700014: Mesh.006
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Armature|Idle' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'L_Shoulder' has translation animation that
+      will be discarded.\n\t'R_Shoulder' has translation animation that will be discarded.\n\nClip
+      'Armature|Idle.001' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Shoulder'
+      has translation animation that will be discarded.\n\t'R_Shoulder' has translation
+      animation that will be discarded.\n\nClip 'Armature|Idle.002' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation DOF
+      on avatar to improve retargeting quality.\n\t'L_Shoulder' has translation animation
+      that will be discarded.\n\t'R_Shoulder' has translation animation that will
+      be discarded.\n\nClip 'Armature|Idle.003' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'L_Shoulder' has translation animation that
+      will be discarded.\n\t'R_Shoulder' has translation animation that will be discarded.\n\nClip
+      'Armature|Move_Backwards' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Leg'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R_Leg'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Armature|Move_Forward' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Leg'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'R_Leg'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Armature|Move_Left' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Thighs'
+      has translation animation that will be discarded.\n\t'L_Leg' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'R_Thighs'
+      has translation animation that will be discarded.\n\t'R_Leg' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\nClip 'Armature|Move_Right'
+      has import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'L_Leg' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'R_Leg'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|Aim_Test
+      takeName: Armature|Aim_Test
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Aim_Test.001
+      takeName: Armature|Aim_Test.001
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|ArmatureAction
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Idle
+      takeName: Armature|Idle
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Idle.001
+      takeName: Armature|Idle.001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Idle.002
+      takeName: Armature|Idle.002
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Idle.003
+      takeName: Armature|Idle.003
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Move_Backwards
+      takeName: Armature|Move_Backwards
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Move_Forward
+      takeName: Armature|Move_Forward
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Move_Left
+      takeName: Armature|Move_Left
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Move_Right
+      takeName: Armature|Move_Right
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|OneHanded_Aim
+      takeName: Armature|OneHanded_Aim
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|TwoHanded_Aim
+      takeName: Armature|TwoHanded_Aim
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|TwoHanded_Aim.001
+      takeName: Armature|TwoHanded_Aim.001
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand/L_Hand_end
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head/Nose/Nose_end
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand/R_Hand_end
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot/L_Foot_end
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot/R_Foot_end
+        weight: 1
+      - path: Cube.000
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Hat
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: Mesh.000
+        weight: 1
+      - path: Mesh.003
+        weight: 1
+      - path: Mesh.006
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Spine
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Thighs
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Thighs
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_UpperLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_UpperLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chest
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Shoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Shoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Arm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Arm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Nose
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Player_TwoHandedAnimation 9(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armature
+      parentName: Player_TwoHandedAnimation 9(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Spine
+      parentName: Armature
+      position: {x: 0.00013523256, y: 0.00093111873, z: 0.0059712697}
+      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Chest
+      parentName: Spine
+      position: {x: -0, y: 0.004861594, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1.0000007, z: 1.0000007}
+    - name: L_Shoulder
+      parentName: Chest
+      position: {x: -0.0012179392, y: 0.0038967633, z: 0.00060743734}
+      rotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1.0000088, y: 1.000008, z: 0.99999994}
+    - name: L_UpperArm
+      parentName: L_Shoulder
+      position: {x: 9.546929e-11, y: 0.0031539218, z: 1.4348067e-10}
+      rotation: {x: 0.000000059604638, y: 0.70710677, z: -0, w: 0.7071068}
+      scale: {x: 1.0000035, y: 1.0000017, z: 1.0000012}
+    - name: L_Arm
+      parentName: L_UpperArm
+      position: {x: 1.6763806e-10, y: 0.0027525264, z: 1.6718807e-10}
+      rotation: {x: -0.000000084293696, y: -0, z: -0.00000008429369, w: 1}
+      scale: {x: 1.0000056, y: 1.0000045, z: 1.0000051}
+    - name: L_Hand
+      parentName: L_Arm
+      position: {x: -0, y: 0.0024547996, z: -0.0000000024427749}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000054, y: 1.0000049, z: 1.0000049}
+    - name: L_Hand_end
+      parentName: L_Hand
+      position: {x: -0, y: 0.0026741654, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Shoulder
+      parentName: Chest
+      position: {x: 0.00094747334, y: 0.0038967633, z: 0.00060743734}
+      rotation: {x: 0.50000006, y: 0.5, z: -0.49999994, w: 0.50000006}
+      scale: {x: 0.99999964, y: 1.0000026, z: 1.0000032}
+    - name: R_UpperArm
+      parentName: R_Shoulder
+      position: {x: 1.0918768e-11, y: 0.0031539225, z: 6.618399e-11}
+      rotation: {x: 0.000000059604645, y: 0.7071068, z: -0.000000029802322, w: 0.7071068}
+      scale: {x: 1.0000098, y: 1.0000077, z: 1.0000114}
+    - name: R_Arm
+      parentName: R_UpperArm
+      position: {x: 8.8196805e-10, y: 0.0027525278, z: -5.3399417e-11}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000045, y: 1.0000049, z: 1.0000073}
+    - name: R_Hand
+      parentName: R_Arm
+      position: {x: 7.699957e-10, y: 0.0024547991, z: -4.711922e-10}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000049, y: 1.0000049, z: 1.000007}
+    - name: R_Hand_end
+      parentName: R_Hand
+      position: {x: -0, y: 0.0026741654, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Neck
+      parentName: Chest
+      position: {x: -0.00052288955, y: 0.006575979, z: 0.00008673556}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Head
+      parentName: Neck
+      position: {x: -0, y: 0.014667414, z: 0}
+      rotation: {x: -0, y: -0, z: -9.313225e-10, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: Nose
+      parentName: Head
+      position: {x: 0.00037482282, y: -0.007995092, z: 0.015464056}
+      rotation: {x: 1.11022296e-16, y: -0.00000011920929, z: -3.608225e-15, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Nose_end
+      parentName: Nose
+      position: {x: -0, y: 0.0057821535, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Thighs
+      parentName: Spine
+      position: {x: -0.0027622287, y: 0.0025438587, z: 0.00083178986}
+      rotation: {x: 0.7071069, y: 0.00000008940697, z: 0.7071067, w: -0.00000011920929}
+      scale: {x: 0.9999985, y: 1.0000091, z: 0.9999977}
+    - name: L_UpperLeg
+      parentName: L_Thighs
+      position: {x: -3.0814728e-12, y: 0.0028733986, z: -1.7452977e-11}
+      rotation: {x: -0.000000119209275, y: -0.7071067, z: 0.00000008940695, w: 0.7071069}
+      scale: {x: 1.0000023, y: 1.0000079, z: 1.0000081}
+    - name: L_Leg
+      parentName: L_UpperLeg
+      position: {x: -3.1573077e-12, y: 0.0023650017, z: -4.160433e-12}
+      rotation: {x: -0, y: -0, z: 7.1054265e-15, w: 1}
+      scale: {x: 0.99999976, y: 1.0000005, z: 1.0000005}
+    - name: L_Foot
+      parentName: L_Leg
+      position: {x: -0, y: 0.0018920022, z: 0}
+      rotation: {x: 7.1054265e-15, y: -5.0487086e-29, z: -0, w: 1}
+      scale: {x: 1.0000006, y: 0.9999999, z: 0.99999994}
+    - name: L_Foot_end
+      parentName: L_Foot
+      position: {x: -0, y: 0.0011667338, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Thighs
+      parentName: Spine
+      position: {x: 0.0024917638, y: 0.0025438587, z: 0.00083178986}
+      rotation: {x: 0.70710695, y: -0.00000014901161, z: 0.7071066, w: 0.00000008940697}
+      scale: {x: 0.9999957, y: 1.0000007, z: 0.9999951}
+    - name: R_UpperLeg
+      parentName: R_Thighs
+      position: {x: -1.1142731e-12, y: 0.0028733995, z: 1.2408265e-11}
+      rotation: {x: 0.00000008940697, y: -0.7071066, z: -0.00000014901161, w: 0.70710695}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.9999997}
+    - name: R_Leg
+      parentName: R_UpperLeg
+      position: {x: -3.1573691e-12, y: 0.0023650017, z: 4.521129e-12}
+      rotation: {x: 7.1054274e-15, y: -0, z: -1.4210855e-14, w: 1}
+      scale: {x: 0.99999976, y: 1.0000002, z: 0.99999994}
+    - name: R_Foot
+      parentName: R_Leg
+      position: {x: -0, y: 0.0018920025, z: 0}
+      rotation: {x: -7.1054274e-15, y: -0, z: 1.4210855e-14, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000005}
+    - name: R_Foot_end
+      parentName: R_Foot
+      position: {x: -0, y: 0.0011667334, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cube.000
+      parentName: Player_TwoHandedAnimation 9(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Cube.001
+      parentName: Player_TwoHandedAnimation 9(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Cylinder
+      parentName: Player_TwoHandedAnimation 9(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Hat
+      parentName: Player_TwoHandedAnimation 9(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Mesh
+      parentName: Player_TwoHandedAnimation 9(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Mesh.000
+      parentName: Player_TwoHandedAnimation 9(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Mesh.003
+      parentName: Player_TwoHandedAnimation 9(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Mesh.006
+      parentName: Player_TwoHandedAnimation 9(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
