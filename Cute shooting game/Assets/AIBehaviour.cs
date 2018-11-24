@@ -5,24 +5,27 @@ using UnityEngine.Events;
 
 public class AIBehaviour : MovementBase
 {
-    [Header("Timers")]
     public Timer pushTimer;
     public Timer changeDestinationTimer;
     public Timer stopTimer;
 
-    [Header("AI")]
-    public NavMeshAgent navMeshAgent;
-    public HealthManager healthManager;
+    [HideInInspector] public NavMeshAgent navMeshAgent;
+    [HideInInspector] public Animator animator;
 
-    [Header("Notify me")]
-    public AIController aiController;
+    public HealthManager healthManager;
 
     public Transform target;
 
     private Vector3 destination;
 	protected bool stopped;
 
-	public override void Push(Vector3 direction, PushPower force, float? distance = null)
+    private void Awake()
+    {
+        this.navMeshAgent = this.GetComponent<NavMeshAgent>();
+        this.animator = this.GetComponent<Animator>();
+    }
+
+    public override void Push(Vector3 direction, PushPower force, float? distance = null)
 	{
 		this.navMeshAgent.enabled = false;
 		base.Push(direction, force, distance);
@@ -47,11 +50,10 @@ public class AIBehaviour : MovementBase
 
 	public void ChangeDestination(Vector3 destination)
 	{
-        Debug.Log("Changed destination");
+        Debug.Log("Changed destination " + destination);
 		this.stopped = false;
         this.destination = destination;
 		this.navMeshAgent.SetDestination(destination);
-        this.aiController.OnChangeDestination();
 	}
 
     public void Chase(Transform target)
@@ -69,8 +71,29 @@ public class AIBehaviour : MovementBase
         return !this.stopped;
     }
 
-    public bool CanMoveTowards()
+    public bool IsTargetTooFarAway()
     {
         return Vector3.Distance(this.transform.position, this.target.position) > 15f;
+    }
+
+    public bool IsTargetTooClose()
+    {
+        return Vector3.Distance(this.transform.position, this.target.position) < 10f;
+    }
+
+    public void Move()
+    {
+        if (this.animator.GetFloat("zSpeed") != 1f)
+        {
+            this.animator.SetFloat("zSpeed", 1f);
+        }
+    }
+
+    public void Stop()
+    {
+        if (this.animator.GetFloat("zSpeed") != 0f)
+        {
+            this.animator.SetFloat("zSpeed", 0f);
+        }
     }
 }

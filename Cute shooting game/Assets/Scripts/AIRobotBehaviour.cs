@@ -10,20 +10,20 @@ public class AIRobotBehaviour : AIBehaviour
     private void Start()
     {
         this.stateMachine = new AIRobotStateMachine(this);
-        this.stateMachine.SetState(this.stateMachine.AggressiveState);
+        this.stateMachine.SetState(this.stateMachine.aggressiveState);
     }
 
     private void Update()
     {
         this.stateMachine.UpdateState();
 
-        if (this.stateMachine.GetState() == this.stateMachine.AggressiveState)
+        if (this.stateMachine.GetState() == this.stateMachine.aggressiveState)
         {
-            this.aiController.Move();
+            this.Move();
         }
         else
         {
-            this.aiController.Stop();
+            this.Stop();
         }
     }
 }

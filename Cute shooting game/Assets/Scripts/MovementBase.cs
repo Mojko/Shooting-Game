@@ -19,6 +19,11 @@ public class MovementBase : MonoBehaviour, IMovement
         }
     }
 
+    public void RotateTowards(Transform transform)
+    {
+        this.transform.LookAt(new Vector3(transform.position.x, this.transform.position.y, transform.position.z));
+    }
+
     public virtual void Push(Vector3 direction, PushPower force, float? distance)
     {
         Vector3 forceDirection = new Vector3(direction.x, 0, direction.z);

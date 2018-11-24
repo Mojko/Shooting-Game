@@ -15,6 +15,19 @@ public class RayCastHelper
         return false;
     }
 
+    public static bool ShootRay(Vector3 from, Vector3 direction, float distance)
+    {
+        Ray ray = new Ray(from, direction);
+
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, distance))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public static Ray GetRayBetweenPoints(Vector3 to)
     {
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(to);
