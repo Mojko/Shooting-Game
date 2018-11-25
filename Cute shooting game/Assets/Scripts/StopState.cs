@@ -9,40 +9,48 @@ public class StopState : State<AIRobotStateMachine>
     {
     }
 
-    public override void OnSet()
+    public override void Start()
     {
         this.stateMachine.behaviour.ChangeDestination(this.stateMachine.behaviour.transform.position);
         this.stateMachine.behaviour.animator.SetBool("Shoot", true);
         this.stateMachine.behaviour.animator.SetTrigger("OneHanded");
+        this.stateMachine.behaviour.Stop();
     }
 
     public override void Update()
     {
-        this.stateMachine.behaviour.shooter.Shoot(this.stateMachine.behaviour.animator);
         this.stateMachine.behaviour.RotateTowards(this.stateMachine.behaviour.target);
 
         if (this.stateMachine.behaviour.IsTargetTooClose())
         {
-            Vector3 destination = Vector3.zero;
+            this.stateMachine.SetState(this.stateMachine.repository.Resolve<EscapeState>());
+        }
 
-            bool backward = RayCastHelper.ShootRay(this.stateMachine.behaviour.transform.position, -this.stateMachine.behaviour.transform.forward, 1f);
-            bool left = RayCastHelper.ShootRay(this.stateMachine.behaviour.transform.position, -this.stateMachine.behaviour.transform.right, 1f);
-            bool right = RayCastHelper.ShootRay(this.stateMachine.behaviour.transform.position, this.stateMachine.behaviour.transform.right, 1f);
+        if (this.stateMachine.behaviour.IsTargetTooFarAway() || !this.stateMachine.behaviour.IsTargetVisible())
+        {
+            this.stateMachine.SetState(this.stateMachine.repository.Resolve<AggressiveState>());
+        }
 
-            if (backward || right)
+        if (!this.stateMachine.behaviour.waitToShoot.IsStarted())
+        {
+            this.stateMachine.behaviour.waitToShoot.StartTimer(startImmediatly: true);
+        }
+        else
+        {
+            if (this.stateMachine.behaviour.animator.IsPlaying(Animation.Shoot_layer_2))
             {
-                destination = this.stateMachine.behaviour.transform.position - this.stateMachine.behaviour.transform.right;
-            }
-            else if (left)
-            {
-                destination = this.stateMachine.behaviour.transform.position + this.stateMachine.behaviour.transform.right;
-            }
-            else
-            {
-                destination = this.stateMachine.behaviour.transform.position - this.stateMachine.behaviour.transform.forward;
+                this.stateMachine.behaviour.shooter.Shoot(this.stateMachine.behaviour.animator);
             }
 
-            this.stateMachine.behaviour.ChangeDestination(destination);
+            if (this.stateMachine.behaviour.shooter.IsOutOfAmmo())
+            {
+                this.stateMachine.behaviour.shooter.Reload(() =>
+                {
+                    this.stateMachine.behaviour.animator.SetTrigger("ShootFinalize");
+
+                    return !this.stateMachine.behaviour.animator.IsPlaying(Animation.ShootFinalize);
+                });
+            }
         }
     }
 }

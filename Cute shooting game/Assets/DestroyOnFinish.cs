@@ -3,7 +3,12 @@ using System.Collections;
 
 public class DestroyOnFinish : MonoBehaviour 
 {
-    public ParticleSystem system;
+    private ParticleSystem system;
+
+    private void Start()
+    {
+        this.system = this.GetComponent<ParticleSystem>();
+    }
 
 	private void Update ()
 	{

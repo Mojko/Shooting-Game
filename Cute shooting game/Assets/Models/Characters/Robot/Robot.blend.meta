@@ -52,7 +52,7 @@ ModelImporter:
     400042: //RootNode
     400044: Spine
     4300000: Mesh
-    7400000: Default Take
+    7400000: Hit
     7400002: ArmatureAction_002
     7400004: Idle
     7400006: Move_Backwards
@@ -62,10 +62,12 @@ ModelImporter:
     7400014: OneHanded_Aim
     7400016: Shoot
     7400018: TwoHanded_Aim
+    7400020: Shoot_Finalize
+    7400022: Hurt
     9500000: //RootNode
     13700000: Mesh
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -75,18 +77,27 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
+      in configuration does not match rotation in animation file:\n\t'L_Leg' : rotation
+      error = 0.501113 deg\n"
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Idle' has import animation warnings that might
-      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'L_Shoulder' has translation animation that will be
-      discarded.\n\t'R_Shoulder' has translation animation that will be discarded.\n\nClip
-      'Move_Backwards' has import animation warnings that might lower retargeting
-      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Leg'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'Move_Forward' has import animation warnings that might lower retargeting quality:\nNote:
-      Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Leg'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+    animationImportWarnings: "\nClip 'Default Take' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'L_Leg' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\nClip 'Hurt' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'L_Leg' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\nClip 'Idle'
+      has import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'L_Shoulder' has
+      translation animation that will be discarded.\n\t'R_Shoulder' has translation
+      animation that will be discarded.\n\nClip 'Move_Backwards' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation DOF
+      on avatar to improve retargeting quality.\n\t'L_Leg' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\nClip 'Move_Forward' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'L_Leg' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'Move_Left' has import animation warnings that might lower retargeting quality:\nNote:
       Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Thighs'
       has translation animation that will be discarded.\n\t'L_Leg' is inbetween humanoid
@@ -95,7 +106,10 @@ ModelImporter:
       that will be discarded.\n\nClip 'Move_Right' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar to
       improve retargeting quality.\n\t'L_Leg' is inbetween humanoid transforms and
-      has rotation animation that will be discarded.\n"
+      has rotation animation that will be discarded.\n\nClip 'Shoot_Finalize' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'R_Shoulder' has
+      translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -106,10 +120,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Default Take
-      takeName: Default Take
-      firstFrame: 0
-      lastFrame: 149
+      name: Hurt
+      takeName: Hurt
+      firstFrame: -1
+      lastFrame: 9
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -701,7 +715,7 @@ ModelImporter:
       name: Shoot
       takeName: Shoot
       firstFrame: -1
-      lastFrame: 1
+      lastFrame: 3
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -842,6 +856,80 @@ ModelImporter:
         weight: 1
       - path: Mesh
         weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Shoot_Finalize
+      takeName: Shoot_Finalize
+      firstFrame: -1
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Chest
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/L_Shoulder/L_UpperArm/L_Arm/L_Hand
+        weight: 1
+      - path: Armature/Spine/Chest/Neck
+        weight: 1
+      - path: Armature/Spine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm
+        weight: 1
+      - path: Armature/Spine/Chest/R_Shoulder/R_UpperArm/R_Arm/R_Hand
+        weight: 1
+      - path: Armature/Spine/L_Thighs
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg
+        weight: 1
+      - path: Armature/Spine/L_Thighs/L_UpperLeg/L_Leg/L_Foot
+        weight: 1
+      - path: Armature/Spine/R_Thighs
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg
+        weight: 1
+      - path: Armature/Spine/R_Thighs/R_UpperLeg/R_Leg/R_Foot
+        weight: 1
+      - path: Mesh
+        weight: 0
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0

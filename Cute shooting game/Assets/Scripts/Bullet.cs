@@ -38,12 +38,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.name == this.name)
+        if(collider.tag == this.tag || collider.name == this.source.transform.root.name)
         {
             return;
         }
 
-        Instantiate(this.onDeathParticle, this.transform.position, Quaternion.identity);
+        //Instantiate(this.onDeathParticle, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 

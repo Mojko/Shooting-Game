@@ -56,6 +56,12 @@ public class RayCastHelper
         return false;
     }
 
+    public static bool ShootLine(Vector3 from, Vector3 to)
+    {
+        Vector3 point;
+        return ShootLine(from, to, out point);
+    }
+
     public static bool ShootLine(Vector3 from, Vector3 to, GameObject expectedHit, out Vector3 point)
     {
         RaycastHit hit;

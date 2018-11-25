@@ -9,9 +9,10 @@ public class AggressiveState : State<AIRobotStateMachine>
     {
     }
 
-    public override void OnSet()
+    public override void Start()
     {
         this.stateMachine.behaviour.animator.SetBool("Shoot", false);
+        this.stateMachine.behaviour.Move();
     }
 
     public override void Update()
@@ -28,7 +29,7 @@ public class AggressiveState : State<AIRobotStateMachine>
 
         if (!this.stateMachine.behaviour.IsTargetTooFarAway())
         {
-            this.stateMachine.SetState(this.stateMachine.stopState);
+            this.stateMachine.SetState(this.stateMachine.repository.Resolve<StopState>());
         }
         else
         {

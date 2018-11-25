@@ -9,6 +9,8 @@ public class Gun : ScriptableObject
     [Range(0, 4)] public float power;
     public ShootType shootType;
     public bool isOneHanded;
+    public int ammo;
+    public int originalAmmo;
 
     [Header("In hand")]
     public Vector3 position;
@@ -18,6 +20,11 @@ public class Gun : ScriptableObject
     [Header("Bullet")]
     public bool slowOverTime;
     public bool shootOneBulletAtATime;
+
+    public void Start()
+    {
+        this.ammo = this.originalAmmo;
+    }
 
     public float GetBulletDirection(int bulletIndex)
     {

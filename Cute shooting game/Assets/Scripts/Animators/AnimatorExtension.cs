@@ -12,12 +12,12 @@ public static class AnimatorExtension
 
     public static bool IsPlaying(this Animator @this, Animation animation)
     {
-        return @this.GetCurrentAnimatorStateInfo(0).IsName(animation.GetName()) && @this.GetCurrentAnimatorStateInfo(0).normalizedTime > 0;
+        return @this.GetCurrentAnimatorStateInfo(animation.GetLayer()).IsName(animation.GetName()) && @this.GetCurrentAnimatorStateInfo(0).normalizedTime > 0;
     }
 
     public static bool AnimationHasEnded(this Animator @this, Animation animation)
     {
-        return (@this.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0f && @this.IsPlaying(animation));
+        return (@this.GetCurrentAnimatorStateInfo(animation.GetLayer()).normalizedTime > 1f && @this.GetCurrentAnimatorStateInfo(animation.GetLayer()).IsName(animation.GetName()));
     }
 
     public static void SetAnimatorController(this Animator @this, RuntimeAnimatorController controller)
@@ -29,18 +29,28 @@ public static class AnimatorExtension
 
 public class Animation
 {
-    public static Animation Shoot = new Animation("Shoot");
-    public static Animation Reload = new Animation("Reload");
+    public static Animation Shoot = new Animation("Shoot", 0);
+    public static Animation Shoot_layer_2 = new Animation("Shoot", 2);
+    public static Animation Reload = new Animation("Reload", 0);
+    public static Animation Hit = new Animation("Hit", 0);
+    public static Animation ShootFinalize = new Animation("Shoot_Finalize", 2);
 
     private string name;
+    private int layer;
 
-    public Animation(string name)
+    public Animation(string name, int layer)
     {
         this.name = name;
+        this.layer = layer;
     }
 
     public string GetName()
     {
         return this.name;
+    }
+
+    public int GetLayer()
+    {
+        return this.layer;
     }
 }

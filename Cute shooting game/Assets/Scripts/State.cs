@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class State<TStateMachine> 
-    where TStateMachine : StateMachine<State<TStateMachine>>
+    where TStateMachine : StateMachine<TStateMachine>
 {
     protected readonly TStateMachine stateMachine;
 
@@ -13,5 +13,5 @@ public abstract class State<TStateMachine>
     }
 
     public abstract void Update();
-    public abstract void OnSet();
+    public abstract void Start();
 }

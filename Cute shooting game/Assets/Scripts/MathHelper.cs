@@ -22,4 +22,23 @@ public static class MathHelper
     {
         return pos1 - pos2;
     }
+
+    public static float GetSide(Transform me, Transform target)
+    {
+        Vector3 perp = Vector3.Cross(me.forward, target.forward);
+        float direction = Vector3.Dot(perp, me.transform.up);
+
+        if (direction > 0f)
+        {
+            return 1f;
+        }
+        else if (direction < 0f)
+        {
+            return -1f;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
 }

@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour
     public LookAtMouse lookAtMouse;
 
     private ThirdPersonCamera thirdPersonCamera;
+    public Transform chest;
 
     private void Start()
     {
@@ -27,15 +28,6 @@ public class PlayerInput : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(Camera.main.transform.eulerAngles.y, Vector3.up);
 
         this.movement.Move(rotation * new Vector3(xAxis, 0, zAxis));
-
-        if (Input.GetMouseButton(2))
-        {
-            this.Aim();
-        }
-        else
-        {
-            this.StopAim();
-        }
 
         if (Input.GetMouseButton(1))
         {
@@ -55,6 +47,23 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             movement.Jump();
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            this.LookAtMouse(-24f);
+        }
+
+        if (Input.GetMouseButton(2))
+        {
+            this.Aim();
+        }
+        else
+        {
+            this.StopAim();
         }
     }
 
@@ -85,14 +94,29 @@ public class PlayerInput : MonoBehaviour
 
     private void Aim()
     {
+        this.LookAtMouse();
+
+        this.thirdPersonCamera.SetCameraState(CameraState.ZoomedIn);
+    }
+
+    private void LookAtMouse(float xOffset = 0f)
+    {
         if (!this.lookAtMouse.enabled)
         {
             this.lookAtMouse.Enable();
             this.animator.SetBool("FreeMoving", true);
         }
 
-        this.transform.rotation = this.thirdPersonCamera.transform.rotation;
-        this.thirdPersonCamera.SetCameraState(CameraState.ZoomedIn);
+        this.chest.rotation = Quaternion.Euler(this.thirdPersonCamera.transform.rotation.eulerAngles.x + xOffset, this.thirdPersonCamera.transform.rotation.eulerAngles.y, this.thirdPersonCamera.transform.rotation.eulerAngles.z);
+    }
+
+    private void StopLookAtMouse()
+    {
+        if (this.lookAtMouse.enabled)
+        {
+            this.lookAtMouse.Disable();
+            this.animator.SetBool("FreeMoving", false);
+        }
     }
 
     private void StopAim()

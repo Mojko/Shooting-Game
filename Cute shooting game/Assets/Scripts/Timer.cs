@@ -8,10 +8,12 @@ public class Timer : MonoBehaviour
 
 	private bool tick = false;
 	private OnFinish onFinish;
+    private int timesStarted;
+    private OnFinish almostFinish;
 
 	public delegate void OnFinish();
 
-	public virtual void StartTimer(OnFinish onFinish)
+	public virtual void StartTimer(OnFinish onFinish = null, OnFinish almostFinish = null, bool startImmediatly = false)
 	{
         if (this.IsStarted())
         {
@@ -24,11 +26,20 @@ public class Timer : MonoBehaviour
 		}
 		else
 		{
-			this.time = this.originalTime;
+            if (!startImmediatly)
+            {
+                this.time = this.originalTime;
+            }
+			else
+            {
+                this.time = 0;
+            }
 		}
 
 		this.tick = true;
 		this.onFinish = onFinish;
+        this.almostFinish = almostFinish;
+        this.timesStarted++;
 	}
 
     public bool IsStarted()
@@ -41,6 +52,14 @@ public class Timer : MonoBehaviour
 		if (tick)
 		{
 			this.time -= 1 * Time.deltaTime;
+            
+            if(this.time < 0.2f)
+            {
+                if(this.almostFinish != null)
+                {
+                    this.almostFinish.Invoke();
+                }
+            }
 
 			if (this.IsFinished())
 			{
@@ -73,6 +92,16 @@ public class Timer : MonoBehaviour
 			this.onFinish.Invoke();
 		}        
 	}
+
+    public int GetTimesStarted()
+    {
+        return this.timesStarted;
+    }
+
+    public float GetPercentage()
+    {
+        return this.time / this.originalTime;
+    }
 }
 
 
