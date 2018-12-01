@@ -11,8 +11,6 @@ public class Shooter : MonoBehaviour
     public GameObject muzzleFlashPrefab;
     public Transform[] spawnPositions;
 
-    public new Animation animation;
-
     private float yStartRotation;
     private int nextBulletIndex;
 

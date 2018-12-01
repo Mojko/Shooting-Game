@@ -25,6 +25,6 @@ public class AIRobotBehaviour : AIBehaviour
 
     protected override void OnHurt()
     {
-        this.animator.Play(Animation.Hit);
+        this.animator.SetTrigger(UnityAnimationParameter.Hit);
     }
 }

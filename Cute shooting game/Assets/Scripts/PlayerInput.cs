@@ -82,7 +82,7 @@ public class PlayerInput : MonoBehaviour
             this.animator.SetTrigger("TwoHanded");
         }
 
-        if (canShoot)
+        if (canShoot || Input.GetKey(KeyCode.LeftAlt))
         {
             this.Shoot();
         }

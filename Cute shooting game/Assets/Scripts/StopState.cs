@@ -37,7 +37,7 @@ public class StopState : State<AIRobotStateMachine>
         }
         else
         {
-            if (this.stateMachine.behaviour.animator.IsPlaying(Animation.Shoot_layer_2))
+            if (this.stateMachine.behaviour.animator.IsPlaying(UnityAnimation.shoot, 2))
             {
                 this.stateMachine.behaviour.shooter.Shoot(this.stateMachine.behaviour.animator);
             }
@@ -48,7 +48,7 @@ public class StopState : State<AIRobotStateMachine>
                 {
                     this.stateMachine.behaviour.animator.SetTrigger("ShootFinalize");
 
-                    return !this.stateMachine.behaviour.animator.IsPlaying(Animation.ShootFinalize);
+                    return !this.stateMachine.behaviour.animator.IsPlaying(UnityAnimation.shootFinalize);
                 });
             }
         }
